@@ -2,6 +2,12 @@
 
 ### Always learning, sometimes creating and the rest of the time implementing solutions for this increasingly impressive digital world.
 
+<br />
+
+### 📊 <Text>&nbsp;</Text> This week working on ...
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
 <br></br>
 	<p align="center">
 		<div align=center>
