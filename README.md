@@ -1,5 +1,5 @@
 <!-- ======================================================================= -->
-<!--  -->
+<!-- Introduction -->
 
 # 👋 Hi, I’m Alex Núñez @losthakkun
 
@@ -9,26 +9,29 @@
 
 <br />
 
-### 📊 <Text>&nbsp;</Text> This week working on ...
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
+<!-- ======================================================================= -->
+<!-- Stats -->
 
-<br></br>
+<br />
 	<p align="center">
 		<div align=center>
 			<img align="center"  src="https://github-readme-stats.vercel.app/api?username=losthakkun&theme=dark&hide_border=true&show_icons=true&count_private=true" />
 			<img align="center" src="https://github-readme-streak-stats.herokuapp.com?user=losthakkun&theme=dark&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" />
-			<br></br>
-			<img align="center"  src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=losthakkun&theme=dark&hide_border=true&no-bg=true&no-frame=true&langs_count=10"/>
 		</div>
 	</p>
-<br></br>
+<br />
+
+<!-- ======================================================================= -->
 
 <br />
 
+<!-- ======================================================================= -->
+<!-- Working on -->
+
 ### 🎳 <Text>&nbsp;</Text> I'm currently working with ...
 
-<br/>
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
 
 <!--List of current skills-->
 <p align="center">
@@ -75,9 +78,14 @@
 	<img src="https://img.shields.io/static/v1?label=Blender&logo=blender&message=2.79 &color=F5792A">
 </p>
 
-### 🌱 <Text>&nbsp;</Text> I’m currently learning ...
+<!-- ======================================================================= -->
 
-<br/>
+<br />
+
+<!-- ======================================================================= -->
+<!-- Learning -->
+
+### 🌱 <Text>&nbsp;</Text> I’m currently learning ...
 
 <p align="center">
 	<img src="https://img.shields.io/static/v1?label=Flutter&logo=flutter&message=1.12.0 &color=02569B">
@@ -87,14 +95,14 @@
 	<img src="https://img.shields.io/static/v1?label=Django&logo=django&message= &color=092E20">
 	<img src="https://img.shields.io/static/v1?label=Python&logo=python&message= &color=3776AB">
 	<img src="https://img.shields.io/static/v1?label=Go&logo=go&message= &color=00ADD8">
-
 </p>
+
+<!-- ======================================================================= -->
 
 <br />
 
-<table>
-<tr>
-<td valign="top" width="50%">
+<!-- ======================================================================= -->
+<!-- Interests -->
 
 ### 👀 <Text>&nbsp;</Text> I’m interested in ...
 
@@ -107,17 +115,18 @@
 - Machine learning
 - Cloud computing
 - Data science
+- Blockchain
 
-</td>
-<td valign="top" width="50%">
+<!-- ======================================================================= -->
+
+<!-- ======================================================================= -->
+<!-- Education -->
 
 ### 💞️ <Text>&nbsp;</Text> My certifications & achievements ...
 
 - [test](https://www.youracclaim.com/badges/a8f9f8e0-b9c7-4b0e-b8e8-f8f8f8f8f8f8/linked_in_profile)
 
-</td>
-</tr>
-</table>
+<!-- ======================================================================= -->
 
 <br />
 
