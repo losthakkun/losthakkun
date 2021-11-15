@@ -1,6 +1,11 @@
+<!-- ======================================================================= -->
+<!--  -->
+
 # 👋 Hi, I’m Alex Núñez @losthakkun
 
 ### Always learning, sometimes creating and the rest of the time implementing solutions for this increasingly impressive digital world.
+
+<!-- ======================================================================= -->
 
 <br />
 
@@ -18,20 +23,6 @@
 		</div>
 	</p>
 <br></br>
-
-<br />
-
-### 👀 <Text>&nbsp;</Text> I’m interested in ...
-
-- Fullstack development
-- Frontend development
-- Mobile development
-- UI/UX design
-- Artificial intelligence
-- Advanced analytics
-- Machine learning
-- Cloud computing
-- Data science
 
 <br />
 
@@ -99,9 +90,36 @@
 
 </p>
 
+<br />
+
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### 👀 <Text>&nbsp;</Text> I’m interested in ...
+
+- Fullstack development
+- Frontend development
+- Mobile development
+- UI/UX design
+- Artificial intelligence
+- Advanced analytics
+- Machine learning
+- Cloud computing
+- Data science
+
+</td>
+<td valign="top" width="50%">
+
 ### 💞️ <Text>&nbsp;</Text> My certifications & achievements ...
 
+- [test](https://www.youracclaim.com/badges/a8f9f8e0-b9c7-4b0e-b8e8-f8f8f8f8f8f8/linked_in_profile)
 
+</td>
+</tr>
+</table>
+
+<br />
 
 ### 📫 <Text>&nbsp;</Text> How to reach me ...
 
