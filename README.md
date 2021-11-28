@@ -1,9 +1,13 @@
+<script>
+	var lala = "lala"
+</script>
+
 <!-- ======================================================================= -->
 <!-- Introduction -->
 
 # 👋 Hi, I’m Alex Núñez @losthakkun
 
-### Always learning, sometimes creating and the rest of the time implementing solutions for this increasingly impressive digital world.
+### Always learning, sometimes creating and the rest of the time implementing solutions for this increasingly impressive digital world. [foo]
 
 <!-- ======================================================================= -->
 
