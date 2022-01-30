@@ -36,7 +36,7 @@
 
 <!--START_SECTION:waka-->
 ```text
-Week: 22 January, 2022 - 28 January, 2022
+Week: 23 January, 2022 - 29 January, 2022
 
 JavaScript   ██████████████████████████████████▒░░░░░░   83.86 % 
 sh           ███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   06.95 % 
