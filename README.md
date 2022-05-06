@@ -37,10 +37,10 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 27 April 2022 - To: 04 May 2022
+From: 28 April 2022 - To: 05 May 2022
 
-JavaScript                    ████████████████████▓░░░░   83.01 %
-Other                         █░░░░░░░░░░░░░░░░░░░░░░░░   03.62 %
+JavaScript                    █████████████████████▒░░░   85.32 %
+Other                         █░░░░░░░░░░░░░░░░░░░░░░░░   04.17 %
 ```
 
 <!--END_SECTION:waka-->
