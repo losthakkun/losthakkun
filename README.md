@@ -47,7 +47,6 @@ sh                           ▓░░░░░░░░░░░░░░░░
 
 <!--List of current skills-->
 #### FrontEnd
-<br />
 
 <p align="left">
 	<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" />
@@ -68,7 +67,6 @@ sh                           ▓░░░░░░░░░░░░░░░░
 </p>
 
 #### Protocols & API's
-<br />
 
 <p align="left">
 	<img src="https://img.shields.io/badge/REST-02569B?logo=rest&logoColor=white" />
@@ -86,7 +84,6 @@ sh                           ▓░░░░░░░░░░░░░░░░
 </p>
 
 #### Backend
-<br />
 
 <p align="left">
 	<img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" />
@@ -100,7 +97,6 @@ sh                           ▓░░░░░░░░░░░░░░░░
 </p>
 
 #### DataBase
-<br />
 
 <p align="left">
 	<img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" />
@@ -112,7 +108,6 @@ sh                           ▓░░░░░░░░░░░░░░░░
 </p>
 
 #### DevOps
-<br />
 
 <p align="left">
 	<img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white" />
@@ -127,10 +122,8 @@ sh                           ▓░░░░░░░░░░░░░░░░
 </p
 
 #### IDE & Tools
-<br />
 
 <p align="left">
-	Android Studio
 	<img src="https://img.shields.io/badge/Android Studio-3DDC84?logo=android-studio&logoColor=white" />
 	<img src="https://img.shields.io/badge/Xcode-1575F9?logo=xcode&logoColor=white" />
 	<img src="https://img.shields.io/badge/Eclipse-2C2255?logo=eclipse-ide&logoColor=white" />
@@ -146,7 +139,6 @@ sh                           ▓░░░░░░░░░░░░░░░░
 </p
 
 #### Design
-<br />
 
 <p align="left">
 	<img src="https://img.shields.io/static/v1?label=Photoshop&logo=adobe&message= &color=31A8FF">
