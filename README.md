@@ -46,114 +46,150 @@ sh                           ▓░░░░░░░░░░░░░░░░
 <!--END_SECTION:waka-->
 
 <!--List of current skills-->
-#### FrontEnd
+### 🍡 <Text>&nbsp;</Text> Blocks on my stacks...
 
-<p align="left">
-	<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" />
-	<img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat-square&logo=react&logoColor=white" />
-	<img src="https://img.shields.io/badge/Expo-0F0F0F?logo=expo&logoColor=white" />
-	<img src="https://img.shields.io/badge/Next.js-0F0F0F?logo=next.js&logoColor=white" />
-	<img src="https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-	<img src="https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
-	<img src="https://img.shields.io/badge/-Ionic-3880FF?style=flat-square&logo=ionic&logoColor=white" />
-	<img src="https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap&logoColor=white" />
-	<img src="https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" />
-	<img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" />
-	<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" />
-	<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" />
-	<img src="https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=white" />
-	<img src="https://img.shields.io/badge/Styled_Components-DB7093?logo=styled-components&logoColor=white" />
-	<img src="https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white" />
+####
+<p align="center">
+FrontEnd
 </p>
 
-#### Protocols & API's
-
-<p align="left">
-	<img src="https://img.shields.io/badge/REST-02569B?logo=rest&logoColor=white" />
-	<img src="https://img.shields.io/badge/XML-02569B?logo=xml&logoColor=white" />
-	<img src="https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white" />
-	<img src="https://img.shields.io/badge/JSON Web Tokens-0F0F0F?logo=json-web-tokens&logoColor=white" />
-	<img src="https://img.shields.io/badge/Socket.io-0F0F0F?logo=socket.io&logoColor=white" />
-	<img src="https://img.shields.io/badge/Stripe-008CDD?logo=stripe&logoColor=white" />
-	<img src="https://img.shields.io/badge/Pusher-ED1965?logo=pusher&logoColor=white" />
-	<img src="https://img.shields.io/badge/Google Maps-4285F4?logo=google-maps&logoColor=white" />
-	<img src="https://img.shields.io/badge/Google Cloud-4285F4?logo=google-cloud&logoColor=white" />
-	<img src="https://img.shields.io/badge/Amazon S3-569A31?logo=amazon-s3&logoColor=white" />
-	<img src="https://img.shields.io/badge/Amazon EC2-569A31?logo=amazon-ec2&logoColor=white" />
-	<img src="https://img.shields.io/badge/Amazon API Gateway-569A31?logo=amazon-api-gateway&logoColor=white" />
+<p align="center">
+	<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+	<img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+	<img src="https://img.shields.io/badge/Expo-0F0F0F?style=for-the-badge&logo=expo&logoColor=white" />
+	<img src="https://img.shields.io/badge/Next.js-0F0F0F?style=for-the-badge&logo=next.js&logoColor=white" />
+	<img src="https://img.shields.io/badge/-Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+	<img src="https://img.shields.io/badge/-Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" />
+	<img src="https://img.shields.io/badge/-Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white" />
+	<img src="https://img.shields.io/badge/-Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
+	<img src="https://img.shields.io/badge/-Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+	<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+	<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+	<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+	<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" />
+	<img src="https://img.shields.io/badge/Styled_Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
+	<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
 </p>
 
-#### Backend
-
-<p align="left">
-	<img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" />
-	<img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" />
-	<img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" />
-	<img src="https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white" />
-	<img src="https://img.shields.io/badge/Java-007396?logo=java&logoColor=white" />
-	<img src="https://img.shields.io/badge/Laravel-FF2D20?logo=laravel&logoColor=white" />
-	<img src="https://img.shields.io/badge/CodeIgniter-EF4223?logo=codeigniter&logoColor=white" />
-	<img src="https://img.shields.io/badge/Amazon Lambda-569A31?logo=amazon-lambda&logoColor=white" />
+####
+<p align="center">
+Protocols & API's
 </p>
 
-#### DataBase
-
-<p align="left">
-	<img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" />
-	<img src="https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white" />
-	<img src="https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white" />
-	<img src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white" />
-	<img src="https://img.shields.io/badge/Amazon DynamoDB-569A31?logo=amazon-dynamodb&logoColor=white" />
-	<img src="https://img.shields.io/badge/Amazon RDS-569A31?logo=amazon-rds&logoColor=white" />
+<p align="center">
+	<img src="https://img.shields.io/badge/REST-02569B?style=for-the-badge&logo=rest&logoColor=white" />
+	<img src="https://img.shields.io/badge/XML-02569B?style=for-the-badge&logo=xml&logoColor=white" />
+	<img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" />
+	<img src="https://img.shields.io/badge/JSON Web Tokens-0F0F0F?style=for-the-badge&logo=json-web-tokens&logoColor=white" />
+	<img src="https://img.shields.io/badge/Socket.io-0F0F0F?style=for-the-badge&logo=socket.io&logoColor=white" />
+	<img src="https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white" />
+	<img src="https://img.shields.io/badge/Pusher-ED1965?style=for-the-badge&logo=pusher&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google Maps-4285F4?style=for-the-badge&logo=google-maps&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" />
+	<img src="https://img.shields.io/badge/Amazon S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white" />
+	<img src="https://img.shields.io/badge/Amazon EC2-569A31?style=for-the-badge&logo=amazon-ec2&logoColor=white" />
+	<img src="https://img.shields.io/badge/Amazon API Gateway-569A31?style=for-the-badge&logo=amazon-api-gateway&logoColor=white" />
 </p>
 
-#### DevOps
+####
+<p align="center">
+Backend
+</p>
 
-<p align="left">
-	<img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white" />
-	<img src="https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=white" />
-	<img src="https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white" />
-	<img src="https://img.shields.io/badge/GitHub Actions-2088FF?logo=github-actions&logoColor=white" />
-	<img src="https://img.shields.io/badge/New Relic-008C99?logo=new-relic&logoColor=white" />
-	<img src="https://img.shields.io/static/v1?label=appleft&logo=visualstudio&message= &color=5C2D91">
-	<img src="https://img.shields.io/static/v1?label=Firebase&logo=firebase&message= &color=FFCA28">
-	<img src="https://img.shields.io/static/v1?label=Analytics&logo=googleanalytics&message= &color=E37400">
-	<img src="https://img.shields.io/static/v1?label=Admob/Adsense&logo=googleadsense&message= &color=4285F4">
+<p align="center">
+	<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+	<img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" />
+	<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+	<img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white" />
+	<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
+	<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+	<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" />
+	<img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" />
+	<img src="https://img.shields.io/badge/CodeIgniter-EF4223?style=for-the-badge&logo=codeigniter&logoColor=white" />
+	<img src="https://img.shields.io/badge/Amazon Lambda-569A31?style=for-the-badge&logo=amazon-lambda&logoColor=white" />
+</p>
+
+####
+<p align="center">
+DataBase
+</p>
+
+<p align="center">
+	<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+	<img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+	<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+	<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+	<img src="https://img.shields.io/badge/Amazon DynamoDB-569A31?style=for-the-badge&logo=amazon-dynamodb&logoColor=white" />
+	<img src="https://img.shields.io/badge/Amazon RDS-569A31?style=for-the-badge&logo=amazon-rds&logoColor=white" />
+</p>
+
+####
+<p align="center">
+DevOps
+</p>
+
+
+<p align="center">
+	<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+	<img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
+	<img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+	<img src="https://img.shields.io/badge/GitHub Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
+	<img src="https://img.shields.io/badge/New Relic-008C99?style=for-the-badge&logo=new-relic&logoColor=white" />
+	<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google Analytics-E37400?style=for-the-badge&logo=google-analytics&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google AdSense-E37400?style=for-the-badge&logo=google-adsense&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google AdMob-E37400?style=for-the-badge&logo=google-admob&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google Optimize-E37400?style=for-the-badge&logo=google-optimize&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google Tag Manager-E37400?style=for-the-badge&logo=google-tag-manager&logoColor=white" />
+	<img src="https://img.shields.io/badge/Google Search Console-E37400?style=for-the-badge&logo=google-search-console&logoColor=white" />
+	<img src="https://img.shields.io/badge/Facebook Analytics-1877F2?style=for-the-badge&logo=facebook-analytics&logoColor=white" />
+	<img src="https://img.shields.io/badge/Facebook Ads-1877F2?style=for-the-badge&logo=facebook-ads&logoColor=white" />
+	<img src="https://img.shields.io/badge/Facebook Business Manager-1877F2?style=for-the-badge&logo=facebook-business-manager&logoColor=white" />
 </p
 
-#### IDE & Tools
+####
+<p align="center">
+IDE & Tools
+</p>
 
-<p align="left">
-	<img src="https://img.shields.io/badge/Android Studio-3DDC84?logo=android-studio&logoColor=white" />
-	<img src="https://img.shields.io/badge/Xcode-1575F9?logo=xcode&logoColor=white" />
-	<img src="https://img.shields.io/badge/Eclipse-2C2255?logo=eclipse-ide&logoColor=white" />
-	<img src="https://img.shields.io/badge/IntelliJ IDEA-000000?logo=intellij-idea&logoColor=white" />
-	<img src="https://img.shields.io/badge/PyCharm-000000?logo=pycharm&logoColor=white" />
-	<img src="https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white" />
-	<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?logo=visual-studio-code&logoColor=white" />
-	<img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" />
-	<img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" />
-	<img src="https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white" />
-	<img src="https://img.shields.io/badge/Trello-0052CC?logo=trello&logoColor=white" />
-	<img src="https://img.shields.io/badge/Bash-4EAA25?logo=gnu-bash&logoColor=white" />
+<p align="center">
+	<img src="https://img.shields.io/badge/Android Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white" />
+	<img src="https://img.shields.io/badge/Xcode-1575F9?style=for-the-badge&logo=xcode&logoColor=white" />
+	<img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse-ide&logoColor=white" />
+	<img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" />
+	<img src="https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white" />
+	<img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
+	<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
+	<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+	<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+	<img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+	<img src="https://img.shields.io/badge/Thunder Client-FF6C37?style=for-the-badge&logo=thunder-client&logoColor=white" />
+	<img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" />
+	<img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" />
+	<img src="https://img.shields.io/badge/Stack Overflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white" />
 </p
 
-#### Design
+####
+<p align="center">
+Design
+</p>
 
-<p align="left">
-	<img src="https://img.shields.io/static/v1?label=Photoshop&logo=adobe&message= &color=31A8FF">
-	<img src="https://img.shields.io/static/v1?label=Illustrator&logo=adobe&message= &color=FF9A00">
-	<img src="https://img.shields.io/static/v1?label=InDesign&logo=adobe&message= &color=FF3366">
-	<img src="https://img.shields.io/static/v1?label=Premiere Pro&logo=adobe&message= &color=9999FF">
-	<img src="https://img.shields.io/static/v1?label=After Effects&logo=adobe&message= &color=9999FF">
-	<img src="https://img.shields.io/static/v1?label=Blender&logo=blender&message= &color=F5792A">
-	<img src="https://img.shields.io/static/v1?label=Canva&logo=canva&message= &color=00C4CC">
-	<img src="https://img.shields.io/static/v1?label=MarvelApp&logo=marvelapp&message= &color=FF3366">
+<p align="center">
+	Photoshop
+	<img src="https://img.shields.io/badge/Adobe Photoshop-31A8FF?style=for-the-badge&logo=adobe-photoshop&logoColor=white" />
+	<img src="https://img.shields.io/badge/Adobe Illustrator-FF9A00?style=for-the-badge&logo=adobe-illustrator&logoColor=white" />
+	<img src="https://img.shields.io/badge/Adobe XD-FF61F6?style=for-the-badge&logo=adobe-xd&logoColor=white" />
+	<img src="https://img.shields.io/badge/Adobe InDesign-EE3C26?style=for-the-badge&logo=adobe-indesign&logoColor=white" />
+	<img src="https://img.shields.io/badge/Adobe Premiere Pro-9999FF?style=for-the-badge&logo=adobe-premiere-pro&logoColor=white" />
+	<img src="https://img.shields.io/badge/Adobe After Effects-9999FF?style=for-the-badge&logo=adobe-after-effects&logoColor=white" />
+	<img src="https://img.shields.io/badge/Blender-F5792A?style=for-the-badge&logo=blender&logoColor=white" />
+	<img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white" />
+	<img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" />
+	<img src="https://img.shields.io/badge/MarvelApp-FF0000?style=for-the-badge&logo=marvelapp&logoColor=white" />
 </p>
 
 <!-- ======================================================================= -->
 
-<br />
 <br />
 
 <!-- ======================================================================= -->
@@ -161,12 +197,12 @@ sh                           ▓░░░░░░░░░░░░░░░░
 
 ### 🌱 <Text>&nbsp;</Text> I’m currently learning ...
 
-<p align="left">
-	<img src="https://img.shields.io/static/v1?label=AWS&logo=amazonaws&message=Serverless &color=232F3E">
-	<img src="https://img.shields.io/static/v1?label=Django&logo=django&message= &color=092E20">
-	<img src="https://img.shields.io/static/v1?label=Python&logo=python&message= &color=3776AB">
-	<img src="https://img.shields.io/static/v1?label=Go&logo=go&message= &color=00ADD8">
-	<img src="https://img.shields.io/static/v1?label=Dart&logo=dart&message= &color=0175C2">
+<p align="center">
+	<img src="https://img.shields.io/badge/AWS SERVERLESS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+	<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+	<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+	<img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+	<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
 </p>
 
 <!-- ======================================================================= -->
@@ -178,16 +214,17 @@ sh                           ▓░░░░░░░░░░░░░░░░
 
 ### 👀 <Text>&nbsp;</Text> I’m interested in ...
 
+- Web 3.0
+- UI/UX design
 - Fullstack development
 - Frontend development
 - Mobile development
-- UI/UX design
-- Artificial intelligence
 - Advanced analytics
 - Machine learning
 - Cloud computing
 - Data science
-- Web 3.0
+- Artificial intelligence
+- Machine learning and deep learning with analogic neural networks
 
 <!-- ======================================================================= -->
 
