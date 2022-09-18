@@ -1,15 +1,10 @@
-<!-- ======================================================================= -->
 <!-- Introduction -->
 
 # 👋 Hi, I’m Alex Núñez @losthakkun
 
 ### Always learning, sometimes creating and the rest of the time implementing solutions for this increasingly impressive digital world.
 
-<!-- ======================================================================= -->
-
 <br />
-
-<!-- ======================================================================= -->
 <!-- Stats -->
 
 <br />
@@ -21,11 +16,7 @@
 	</p>
 <br />
 
-<!-- ======================================================================= -->
-
 <br />
-
-<!-- ======================================================================= -->
 <!-- Working on -->
 
 ### 🎳 <Text>&nbsp;</Text> I'm currently working with...
@@ -45,8 +36,9 @@ sh                           ▓░░░░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
+<br />
 <!--List of current skills-->
-### 🍡 <Text>&nbsp;</Text> Blocks on my stacks...
+### 🍡 <Text>&nbsp;</Text> Blocks on my stacks ...
 
 ####
 <p align="center">
@@ -188,11 +180,7 @@ Design
 	<img src="https://img.shields.io/badge/MarvelApp-FF0000?style=for-the-badge&logo=marvelapp&logoColor=white" />
 </p>
 
-<!-- ======================================================================= -->
-
 <br />
-
-<!-- ======================================================================= -->
 <!-- Learning -->
 
 ### 🌱 <Text>&nbsp;</Text> I’m currently learning ...
@@ -205,11 +193,7 @@ Design
 	<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
 </p>
 
-<!-- ======================================================================= -->
-
 <br />
-
-<!-- ======================================================================= -->
 <!-- Interests -->
 
 ### 👀 <Text>&nbsp;</Text> I’m interested in ...
@@ -226,18 +210,15 @@ Design
 - Artificial intelligence
 - Machine learning and deep learning with analogic neural networks
 
-<!-- ======================================================================= -->
-
-<!-- ======================================================================= -->
+<br />
 <!-- Education -->
 
 ### 💞️ <Text>&nbsp;</Text> My certifications & achievements ...
 
 - [test](https://www.youracclaim.com/badges/a8f9f8e0-b9c7-4b0e-b8e8-f8f8f8f8f8f8/linked_in_profile)
 
-<!-- ======================================================================= -->
-
 <br />
+<!-- Links -->
 
 ### 📫 <Text>&nbsp;</Text> How to reach me ...
 
