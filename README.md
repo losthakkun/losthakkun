@@ -24,11 +24,11 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 23 September 2022 - To: 30 September 2022
+From: 24 September 2022 - To: 01 October 2022
 
-JavaScript                      ██████████████████░░░░░░░   72.24 %
-JSON                            █▓░░░░░░░░░░░░░░░░░░░░░░░   06.97 %
-Other                           █▒░░░░░░░░░░░░░░░░░░░░░░░   05.52 %
+JavaScript                      ████████████████▒░░░░░░░░   65.03 %
+JSON                            ██░░░░░░░░░░░░░░░░░░░░░░░   08.59 %
+Other                           █▓░░░░░░░░░░░░░░░░░░░░░░░   06.77 %
 ```
 
 <!--END_SECTION:waka-->
