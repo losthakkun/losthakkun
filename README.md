@@ -24,11 +24,10 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 05 October 2022 - To: 12 October 2022
+From: 06 October 2022 - To: 13 October 2022
 
-sh                           ███████████████████████▒░   92.90 %
-Groovy                       █▒░░░░░░░░░░░░░░░░░░░░░░░   04.81 %
-Properties                   ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.29 %
+sh                       █████████████████████▒░░░   85.96 %
+Groovy                   ███▓░░░░░░░░░░░░░░░░░░░░░   14.04 %
 ```
 
 <!--END_SECTION:waka-->
