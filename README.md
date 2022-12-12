@@ -24,7 +24,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 03 December 2022 - To: 10 December 2022
+From: 04 December 2022 - To: 11 December 2022
 
 JavaScript                   ███████████████████▒░░░░░   76.97 %
 JSON                         ███░░░░░░░░░░░░░░░░░░░░░░   12.46 %
