@@ -24,7 +24,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 15 January 2023 - To: 22 January 2023
+From: 16 January 2023 - To: 23 January 2023
 
 JavaScript                    ██████████▒░░░░░░░░░░░░░░   40.84 %
 JSON                          ██████░░░░░░░░░░░░░░░░░░░   24.13 %
