@@ -24,11 +24,11 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 09 February 2023 - To: 16 February 2023
+From: 10 February 2023 - To: 17 February 2023
 
-JavaScript                      █████████▓░░░░░░░░░░░░░░░   38.22 %
-PHP                             ███████▓░░░░░░░░░░░░░░░░░   30.70 %
-Other                           ████▓░░░░░░░░░░░░░░░░░░░░   18.12 %
+JavaScript                      ██████████░░░░░░░░░░░░░░░   39.73 %
+PHP                             ███████▒░░░░░░░░░░░░░░░░░   29.29 %
+Other                           ████▒░░░░░░░░░░░░░░░░░░░░   17.38 %
 ```
 
 <!--END_SECTION:waka-->
