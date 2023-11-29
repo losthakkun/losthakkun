@@ -24,11 +24,10 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 19 November 2023 - To: 26 November 2023
+From: 20 November 2023 - To: 27 November 2023
 
-JavaScript                   ████████████████████████▒   97.39 %
-sh                           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.50 %
-TypeScript                   ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.12 %
+JavaScript                   ████████████████████████▒   97.83 %
+sh                           ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.17 %
 ```
 
 <!--END_SECTION:waka-->
