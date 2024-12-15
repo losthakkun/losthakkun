@@ -24,9 +24,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 December 2024 - To: 12 December 2024
+From: 06 December 2024 - To: 13 December 2024
 
-PHP                   █████████████████████████   100.00 %
+PHP                          ████████████▒░░░░░░░░░░░░   48.76 %
+JavaScript                   ███████████▒░░░░░░░░░░░░░   45.10 %
+YAML                         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.13 %
 ```
 
 <!--END_SECTION:waka-->
