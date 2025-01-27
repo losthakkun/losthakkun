@@ -24,10 +24,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 17 January 2025 - To: 24 January 2025
+From: 18 January 2025 - To: 25 January 2025
 
-sh                              ███████████████████████░░   91.77 %
-Apache Config                   ██░░░░░░░░░░░░░░░░░░░░░░░   08.23 %
+sh                              ████████████████████░░░░░   80.07 %
+PHP                             ███░░░░░░░░░░░░░░░░░░░░░░   11.49 %
+Apache Config                   ██░░░░░░░░░░░░░░░░░░░░░░░   08.44 %
 ```
 
 <!--END_SECTION:waka-->
