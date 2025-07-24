@@ -24,9 +24,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 14 July 2025 - To: 21 July 2025
+From: 16 July 2025 - To: 23 July 2025
 
-No activity tracked
+JSON                    ██████████████████▓░░░░░░   74.90 %
+PHP                     █████▓░░░░░░░░░░░░░░░░░░░   22.89 %
+Other                   ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.21 %
 ```
 
 <!--END_SECTION:waka-->
