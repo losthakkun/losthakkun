@@ -24,10 +24,10 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 14 October 2025 - To: 21 October 2025
+From: 15 October 2025 - To: 22 October 2025
 
-PHP                          ███████████████████████░░   92.32 %
-JavaScript                   ██░░░░░░░░░░░░░░░░░░░░░░░   07.68 %
+PHP                   ███████████████████▓░░░░░   78.87 %
+sh                    █████▒░░░░░░░░░░░░░░░░░░░   21.13 %
 ```
 
 <!--END_SECTION:waka-->
