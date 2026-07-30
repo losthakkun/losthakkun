@@ -50,9 +50,21 @@ Domain       Integrations, internal platforms, logistics operations
 ## `this_week_in_code`
 
 <!--START_SECTION:waka-->
-```txt
-WakaTime stats will appear here after the workflow runs.
+📊 **This Week I Spent My Time On** 
+
+```text
+💬 Programming Languages: 
+No Activity Tracked This Week
+
+🔥 Editors: 
+No Activity Tracked This Week
+
+💻 Operating System: 
+No Activity Tracked This Week
 ```
+
+
+ Last Updated on 30/07/2026 20:30:59 UTC
 <!--END_SECTION:waka-->
 
 ## `notes`
