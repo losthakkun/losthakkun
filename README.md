@@ -81,8 +81,6 @@ _Updated 2026-07-31 20:27 UTC_
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%2C227%20hrs%203%20mins-blue?style=flat)
 
-![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-6%20hrs%2029%20mins-blue?style=flat)
-
 📊 **This Week I Spent My Time On** 
 
 ```text
@@ -103,7 +101,7 @@ Linux                    24 hrs 32 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛�
 ```
 
 
- Last Updated on 31/07/2026 20:27:24 UTC
+ Last Updated on 31/07/2026 20:30:16 UTC
 <!--END_SECTION:waka-->
 
 ## `notes`
