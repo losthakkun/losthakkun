@@ -8,12 +8,13 @@
   "buckets": {
     "lider_tech": {
       "keywords": [
-        "1:1", "one on one", "1-1", "planning", "planeacion", "planeación",
+        "<>", "1:1", "one on one", "1-1", "planning", "planeacion", "planeación",
         "sprint", "refinement", "grooming", "retro", "retrospectiva",
         "daily", "standup", "stand-up", "review", "revision", "revisión",
         "arquitectura", "architecture", "design review", "tech lead", "sync",
         "kickoff", "kick-off", "roadmap", "entrevista", "interview",
-        "onboarding", "mentoria", "mentoría", "feedback", "comite", "comité"
+        "onboarding", "mentoria", "mentoría", "feedback", "comite", "comité",
+        "proyecto", "project"
       ]
     },
     "it_soporte": {
@@ -21,15 +22,19 @@
         "incidente", "incident", "outage", "caida", "caída", "postmortem",
         "post-mortem", "soporte", "support", "guardia", "on-call", "oncall",
         "mantenimiento", "maintenance", "deploy", "release", "migracion",
-        "migración", "infra", "infraestructura", "acceso", "permisos",
-        "proveedor", "vendor", "ticket", "helpdesk"
+        "migración", "infra", "infraestructura", "acceso", "accesos",
+        "permisos", "proveedor", "vendor", "ticket", "helpdesk",
+        "dominio", "dominios", "dns", "traslado", "transfer", "simulacro",
+        "slack", "cuenta", "cuentas"
       ]
     }
   },
   "default_bucket_for_meetings": "lider_tech",
   "min_attendees_for_default": 2,
+  "_ignore_note": "Keep these specific. 'personal' alone was removed: in Spanish it also means staff, so it wrongly dropped 'dominios de personal'.",
   "ignore_keywords": [
     "almuerzo", "lunch", "comida", "vacaciones", "pto", "holiday", "feriado",
-    "focus", "bloqueo", "block", "gym", "personal", "dentista", "medico", "médico"
+    "focus", "bloqueo", "gym", "asunto personal", "tema personal",
+    "dentista", "medico", "médico", "cumpleaños", "cumple"
   ]
 }

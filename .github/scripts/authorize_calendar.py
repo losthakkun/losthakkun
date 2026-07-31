@@ -53,6 +53,25 @@ class CodeHandler(http.server.BaseHTTPRequestHandler):
         """Silence request logging so stdout stays clean for the token."""
 
 
+def open_browser_quietly(url: str) -> None:
+    """Launch the browser with its stdout silenced.
+
+    webbrowser delegates to a browser process that inherits our file
+    descriptors, and Firefox prints "Opening in existing browser session." to
+    stdout. That line would land ahead of the token and corrupt any secret this
+    script is piped into, so fd 1 is redirected for the duration of the launch.
+    """
+    saved_stdout = os.dup(1)
+    try:
+        devnull = os.open(os.devnull, os.O_WRONLY)
+        os.dup2(devnull, 1)
+        os.close(devnull)
+        webbrowser.open(url)
+    finally:
+        os.dup2(saved_stdout, 1)
+        os.close(saved_stdout)
+
+
 def main() -> int:
     client_id = os.environ.get("GOOGLE_CLIENT_ID")
     client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
@@ -73,7 +92,7 @@ def main() -> int:
     url = f"{AUTH_ENDPOINT}?{params}"
 
     print(f"Open this URL if a browser does not appear:\n{url}\n", file=sys.stderr)
-    webbrowser.open(url)
+    open_browser_quietly(url)
 
     with http.server.HTTPServer(("127.0.0.1", PORT), CodeHandler) as server:
         server.handle_request()
