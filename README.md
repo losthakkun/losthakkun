@@ -65,17 +65,12 @@ agent_workflow — last 7 days
   context_moved    1.22B tokens in · 4.15M tokens out
   top_surfaces     PHP 6h 40m · Markdown 5h 53m · JavaScript 3h 54m · Bash 3h 15m
 
-time_split — last 30 days · weekly average
-  lider_tech   2h 48m/week  ██░░░░░░░░░░░░░░░░░░  11.1%
-  desarrollo  21h 58m/week  █████████████████░░░  86.9%
-  it_soporte   0h 31m/week  ░░░░░░░░░░░░░░░░░░░░   2.1%
-
 delivery — last 30 days
   prs_opened     317
   prs_merged     267 (84% of opened)
   lines_shipped  +123,939 / -9,218
   active_repos   9
-  contributions  748 (private included)
+  contributions  749 (private included)
 
 commit_rhythm — last 30 days · America/Mexico_City
   morning  06-12  133 commits  ███████░░░░░░░░░░░░░  32.8%
@@ -84,7 +79,7 @@ commit_rhythm — last 30 days · America/Mexico_City
   night    00-06    0 commits  ░░░░░░░░░░░░░░░░░░░░   0.0%
 ```
 
-_Updated 2026-07-31 21:32 UTC_
+_Updated 2026-07-31 21:43 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## `where_the_time_goes`
