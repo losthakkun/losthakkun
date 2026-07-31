@@ -128,6 +128,23 @@ check(
     "profile_metrics exposes a form poster for the token exchange",
 )
 
+# --- publication gate -----------------------------------------------------
+# The gate must be checked before any credential lookup or network call, so a
+# disabled group costs nothing and cannot fail the run.
+
+for value in ("", "0", "false", "no"):
+    os.environ["PUBLISH_TIME_SPLIT"] = value
+    check(pm.build_time_split("irrelevant", TZ) == [], f"time_split stays unpublished for {value!r}")
+os.environ["PUBLISH_TIME_SPLIT"] = "true"
+os.environ.pop("GOOGLE_CLIENT_ID", None)
+os.environ.pop("GOOGLE_CLIENT_SECRET", None)
+os.environ.pop("GOOGLE_REFRESH_TOKEN", None)
+check(
+    pm.build_time_split("irrelevant", TZ) == [],
+    "an enabled gate without credentials still degrades instead of failing",
+)
+os.environ.pop("PUBLISH_TIME_SPLIT", None)
+
 # --- time split rendering -------------------------------------------------
 
 waka_month = {"categories": [{"name": "AI Coding", "total_seconds": 3600 * 60}, {"name": "Meeting", "total_seconds": 3600 * 9}]}

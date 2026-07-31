@@ -443,6 +443,16 @@ def build_time_split(wakatime_key: str, tz_name: str) -> list[str]:
     A missing calendar credential is a normal state, not a failure: the rest of
     the metrics must keep publishing on the daily schedule either way.
     """
+    if os.environ.get("PUBLISH_TIME_SPLIT", "").strip().lower() not in {"1", "true", "yes"}:
+        # Held back on purpose. Calendar hours and keyboard hours are not
+        # commensurable: the percentages imply a partition of the working day
+        # that neither source measures, which read as under-reporting the
+        # leadership work that happens in reviews rather than in meetings.
+        # Credentials stay configured; flip the PUBLISH_TIME_SPLIT variable to
+        # publish once the remaining sources are settled.
+        print("time_split disabled (PUBLISH_TIME_SPLIT is not set)", file=sys.stderr)
+        return []
+
     client_id = os.environ.get("GOOGLE_CLIENT_ID")
     client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
     refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
