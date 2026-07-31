@@ -103,6 +103,31 @@ check(ct.is_countable(event("x"), ME), "an accepted invitation is countable")
 totals = ct.aggregate([event("1:1", hours=1), event("Outage", hours=2), event("Almuerzo", hours=1)], RULES, ME)
 check(totals == {"lider_tech": 1.0, "it_soporte": 2.0}, "aggregate sums hours per bucket and drops the rest")
 
+# --- token exchange contract ----------------------------------------------
+# Google's token endpoint answers 400 to a JSON body. access_token must hand
+# the poster a mapping to be form-encoded, never a pre-serialized string, and
+# the poster it is given must be the form one.
+
+seen: dict = {}
+
+
+def fake_post_form(url: str, form) -> dict:
+    seen["url"] = url
+    seen["form"] = form
+    return {"access_token": "ya29.fake"}
+
+
+token = ct.access_token("cid", "csecret", "1//refresh", fake_post_form)
+check(token == "ya29.fake", "access_token returns the access token from the response")
+check(isinstance(seen["form"], dict), "access_token passes a mapping, not a serialized body")
+check(seen["form"].get("grant_type") == "refresh_token", "the refresh grant type is requested")
+check(seen["form"].get("refresh_token") == "1//refresh", "the refresh token is forwarded")
+check(seen["url"] == ct.TOKEN_ENDPOINT, "the request targets Google's token endpoint")
+check(
+    pm.post_form.__doc__ and "form-urlencoded" in pm.post_form.__doc__,
+    "profile_metrics exposes a form poster for the token exchange",
+)
+
 # --- time split rendering -------------------------------------------------
 
 waka_month = {"categories": [{"name": "AI Coding", "total_seconds": 3600 * 60}, {"name": "Meeting", "total_seconds": 3600 * 9}]}

@@ -22,6 +22,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from typing import Any
@@ -65,6 +66,16 @@ def request_json(request: urllib.request.Request, timeout: int, attempts: int = 
 def post_json(url: str, payload: dict, headers: dict) -> dict:
     request = urllib.request.Request(
         url, data=json.dumps(payload).encode(), headers={**headers, "Content-Type": "application/json"}
+    )
+    return request_json(request, timeout=30)
+
+
+def post_form(url: str, form: dict) -> dict:
+    """POST application/x-www-form-urlencoded. OAuth token endpoints require it."""
+    request = urllib.request.Request(
+        url,
+        data=urllib.parse.urlencode(form).encode(),
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
     )
     return request_json(request, timeout=30)
 
@@ -444,7 +455,7 @@ def build_time_split(wakatime_key: str, tz_name: str) -> list[str]:
 
     try:
         waka_month = fetch_wakatime(wakatime_key, "last_30_days")
-        token = calendar_time.access_token(client_id, client_secret, refresh_token, post_json)
+        token = calendar_time.access_token(client_id, client_secret, refresh_token, post_form)
         now = datetime.now(ZoneInfo(tz_name) if tz_name else timezone.utc)
         events = calendar_time.fetch_events(token, calendar, DELIVERY_WINDOW_DAYS, get_json, now)
         totals = calendar_time.aggregate(events, calendar_time.load_rules(), self_email)

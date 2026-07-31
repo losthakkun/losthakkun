@@ -88,16 +88,22 @@ def aggregate(events: list[dict[str, Any]], rules: dict[str, Any], self_email: s
     return totals
 
 
-def access_token(client_id: str, client_secret: str, refresh_token: str, post_json: Callable) -> str:
-    payload = urllib.parse.urlencode(
+def access_token(client_id: str, client_secret: str, refresh_token: str, post_form: Callable) -> str:
+    """Exchange the refresh token for an access token.
+
+    `post_form` must send the mapping as application/x-www-form-urlencoded.
+    Google's token endpoint rejects a JSON body with 400, so this deliberately
+    takes a form poster rather than the JSON one used for every other API here.
+    """
+    body = post_form(
+        TOKEN_ENDPOINT,
         {
             "client_id": client_id,
             "client_secret": client_secret,
             "refresh_token": refresh_token,
             "grant_type": "refresh_token",
-        }
+        },
     )
-    body = post_json(TOKEN_ENDPOINT, payload, {"Content-Type": "application/x-www-form-urlencoded"})
     return body["access_token"]
 
 
