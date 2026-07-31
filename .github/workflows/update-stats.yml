@@ -71,6 +71,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Test metric rendering
+        run: python .github/scripts/test_profile_metrics.py
+
       - name: Render agent and delivery metrics
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
