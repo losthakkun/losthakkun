@@ -47,7 +47,36 @@ Domain       Integrations, internal platforms, logistics operations
 4. Optimize for maintainability, not short-term novelty.
 ```
 
-## `this_week_in_code`
+## `how_i_work`
+
+```txt
+I work agent-first: I own the architecture, the contracts, and the review;
+agents execute the mechanical work under those constraints.
+The metrics below measure output and delivery, not hours in an editor.
+```
+
+<!--START_SECTION:agent-impact-->
+```txt
+agent_workflow — last 7 days
+  sessions         32 sessions · 205 prompts · 2.08k chars per prompt
+  agent_time       24h 30m (99.82% of tracked time)
+  lines_generated  +27,543 / -636
+  model_mix        Opus 61% · Sonnet 38%
+  context_moved    1.22B tokens in · 4.15M tokens out
+  top_surfaces     PHP 6h 40m · Markdown 5h 53m · JavaScript 3h 54m · Bash 3h 15m
+
+delivery — last 30 days
+  prs_opened     317
+  prs_merged     267 (84% of opened)
+  lines_shipped  +123,939 / -9,218
+  active_repos   9
+  contributions  740 (private included)
+```
+
+_Updated 2026-07-31 20:23 UTC_
+<!--END_SECTION:agent-impact-->
+
+## `where_the_time_goes`
 
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%2C221%20hrs%2027%20mins-blue?style=flat)
