@@ -64,14 +64,14 @@ check(
 # --- calendar classification ---------------------------------------------
 
 RULES = ct.load_rules()
-ME = "developers@weport.global"
+ME = "me@example.com"  # fixture only; the real address lives in a secret
 
 
 def event(summary: str, hours: float = 1.0, attendees: int = 3, **extra) -> dict:
     start = "2026-07-15T10:00:00-06:00"
     end = f"2026-07-15T{10 + int(hours):02d}:{int(hours % 1 * 60):02d}:00-06:00"
     people = [{"email": ME, "self": True, "responseStatus": "accepted"}]
-    people += [{"email": f"other{i}@weport.global"} for i in range(attendees - 1)]
+    people += [{"email": f"other{i}@example.com"} for i in range(attendees - 1)]
     return {"summary": summary, "start": {"dateTime": start}, "end": {"dateTime": end}, "attendees": people, **extra}
 
 
