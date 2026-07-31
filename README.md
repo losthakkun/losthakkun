@@ -70,10 +70,10 @@ delivery — last 30 days
   prs_merged     267 (84% of opened)
   lines_shipped  +123,939 / -9,218
   active_repos   9
-  contributions  740 (private included)
+  contributions  424 (private included)
 ```
 
-_Updated 2026-07-31 20:23 UTC_
+_Updated 2026-07-31 20:27 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## `where_the_time_goes`
