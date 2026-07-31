@@ -27,11 +27,13 @@ from datetime import datetime, timedelta, timezone
 from typing import Any
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
+import calendar_time
+
 README = os.path.join(os.path.dirname(__file__), "..", "..", "README.md")
 START = "<!--START_SECTION:agent-impact-->"
 END = "<!--END_SECTION:agent-impact-->"
 
-WAKATIME_STATS = "https://wakatime.com/api/v1/users/current/stats/last_7_days"
+WAKATIME_STATS = "https://wakatime.com/api/v1/users/current/stats/{range}"
 GITHUB_GRAPHQL = "https://api.github.com/graphql"
 DELIVERY_WINDOW_DAYS = 30
 DEFAULT_TIMEZONE = "America/Mexico_City"
@@ -85,17 +87,18 @@ def compact_duration(seconds: float) -> str:
     return f"{total_minutes // 60}h {total_minutes % 60:02d}m"
 
 
-def fetch_wakatime(api_key: str) -> dict[str, Any]:
-    """Read the weekly stats aggregate.
+def fetch_wakatime(api_key: str, stats_range: str = "last_7_days") -> dict[str, Any]:
+    """Read a stats aggregate.
 
-    WakaTime builds this aggregate lazily: the first request after new
+    WakaTime builds these aggregates lazily: the first request after new
     heartbeats can answer without the breakdown lists. Retrying once returns
     the computed object, which is why the workflow also warms this endpoint up.
     """
     auth = base64.b64encode(api_key.encode()).decode()
     headers = {"Authorization": f"Basic {auth}"}
+    url = WAKATIME_STATS.format(range=stats_range)
     for _ in range(2):
-        data = get_json(WAKATIME_STATS, headers).get("data", {})
+        data = get_json(url, headers).get("data", {})
         if data.get("languages"):
             return data
     return data
@@ -274,6 +277,57 @@ def render_commit_rhythm(timestamps: list[str], tz_name: str) -> list[str]:
     return lines
 
 
+# WakaTime categories that describe leadership or support work rather than
+# building. They are excluded from the development bucket so that heartbeats
+# sent with `--category meeting` can never inflate it.
+NON_DEV_WAKA_CATEGORIES = frozenset(
+    {"meeting", "planning", "advising", "communicating", "supporting", "code reviewing", "learning"}
+)
+
+
+def development_hours(waka: dict[str, Any]) -> float:
+    return (
+        sum(
+            category["total_seconds"]
+            for category in waka.get("categories", [])
+            if category["name"].lower() not in NON_DEV_WAKA_CATEGORIES
+        )
+        / 3600
+    )
+
+
+def render_time_split(waka: dict[str, Any], calendar_totals: dict[str, float], days: int) -> list[str]:
+    """Weekly average hours per activity bucket.
+
+    Development comes from WakaTime (measured at the keyboard), leadership and
+    support from the calendar. The two sources can overlap when a meeting runs
+    while an agent is working, so these are shares of attention, not a
+    partition of the day — the group header says weekly average for that reason.
+    """
+    hours = {"desarrollo": development_hours(waka), **calendar_totals}
+    hours = {bucket: value for bucket, value in hours.items() if value > 0}
+    if not hours:
+        return []
+
+    weeks = days / 7
+    total = sum(hours.values())
+    order = ["lider_tech", "desarrollo", "it_soporte"]
+    ranked = sorted(hours.items(), key=lambda item: order.index(item[0]) if item[0] in order else len(order))
+
+    label_width = max(len(bucket) for bucket, _ in ranked)
+    weekly = {bucket: value / weeks for bucket, value in ranked}
+    value_width = max(len(f"{int(value)}h {int(value % 1 * 60):02d}m") for value in weekly.values())
+
+    lines = []
+    for bucket, value in ranked:
+        per_week = weekly[bucket]
+        percent = value / total * 100
+        bar = "█" * round(percent / 5) + "░" * (20 - round(percent / 5))
+        rendered = f"{int(per_week)}h {int(per_week % 1 * 60):02d}m".rjust(value_width)
+        lines.append(f"  {bucket.ljust(label_width)}  {rendered}/week  {bar}  {percent:4.1f}%")
+    return lines
+
+
 def render_delivery(token: str, login: str) -> tuple[list[tuple[str, str]], set[str], str]:
     since = (datetime.now(timezone.utc) - timedelta(days=DELIVERY_WINDOW_DAYS)).date().isoformat()
     now = datetime.now(timezone.utc)
@@ -335,10 +389,17 @@ def format_rows(rows: list[tuple[str, str]]) -> list[str]:
 
 
 def build_block(
-    waka: dict[str, Any], delivery: list[tuple[str, str]], rhythm: list[str], tz_name: str
+    waka: dict[str, Any],
+    delivery: list[tuple[str, str]],
+    rhythm: list[str],
+    time_split: list[str],
+    tz_name: str,
 ) -> str:
     lines = ["```txt", "agent_workflow — last 7 days"]
     lines += format_rows(render_agent_workflow(waka))
+    if time_split:
+        lines += ["", f"time_split — last {DELIVERY_WINDOW_DAYS} days · weekly average"]
+        lines += time_split
     lines += ["", f"delivery — last {DELIVERY_WINDOW_DAYS} days"]
     lines += format_rows(delivery)
     if rhythm:
@@ -365,6 +426,35 @@ def write_block(block: str) -> bool:
     return True
 
 
+def build_time_split(wakatime_key: str, tz_name: str) -> list[str]:
+    """Render the activity split, or nothing at all when the calendar is not wired up.
+
+    A missing calendar credential is a normal state, not a failure: the rest of
+    the metrics must keep publishing on the daily schedule either way.
+    """
+    client_id = os.environ.get("GOOGLE_CLIENT_ID")
+    client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
+    refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
+    self_email = os.environ.get("GOOGLE_CALENDAR_EMAIL", "")
+    calendar = os.environ.get("GOOGLE_CALENDAR_ID", "primary")
+
+    if not (client_id and client_secret and refresh_token):
+        print("calendar credentials absent, skipping time_split", file=sys.stderr)
+        return []
+
+    try:
+        waka_month = fetch_wakatime(wakatime_key, "last_30_days")
+        token = calendar_time.access_token(client_id, client_secret, refresh_token, post_json)
+        now = datetime.now(ZoneInfo(tz_name) if tz_name else timezone.utc)
+        events = calendar_time.fetch_events(token, calendar, DELIVERY_WINDOW_DAYS, get_json, now)
+        totals = calendar_time.aggregate(events, calendar_time.load_rules(), self_email)
+        print(f"classified {len(events)} calendar events", file=sys.stderr)
+        return render_time_split(waka_month, totals, DELIVERY_WINDOW_DAYS)
+    except (urllib.error.HTTPError, urllib.error.URLError, KeyError, RuntimeError) as error:
+        print(f"calendar lookup failed, skipping time_split: {error}", file=sys.stderr)
+        return []
+
+
 def main() -> int:
     wakatime_key = os.environ.get("WAKATIME_API_KEY")
     github_token = os.environ.get("GH_TOKEN")
@@ -386,8 +476,9 @@ def main() -> int:
         github_token, user_node_id(github_token, login), repositories, f"{since}T00:00:00Z"
     )
     rhythm = render_commit_rhythm(timestamps, tz_name)
+    time_split = build_time_split(wakatime_key, tz_name)
 
-    block = build_block(waka, delivery, rhythm, tz_name)
+    block = build_block(waka, delivery, rhythm, time_split, tz_name)
 
     if "--dry-run" in sys.argv:
         print(block)

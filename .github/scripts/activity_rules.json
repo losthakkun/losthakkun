@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "Maps calendar events to the buckets published in the README time_split group.",
+    "Rules are matched against the lowercased event summary, in order, first match wins.",
+    "Event titles are NEVER published — only the aggregated hours per bucket.",
+    "Tune the keyword lists once real titles are flowing; the defaults are a starting point."
+  ],
+  "buckets": {
+    "lider_tech": {
+      "keywords": [
+        "1:1", "one on one", "1-1", "planning", "planeacion", "planeación",
+        "sprint", "refinement", "grooming", "retro", "retrospectiva",
+        "daily", "standup", "stand-up", "review", "revision", "revisión",
+        "arquitectura", "architecture", "design review", "tech lead", "sync",
+        "kickoff", "kick-off", "roadmap", "entrevista", "interview",
+        "onboarding", "mentoria", "mentoría", "feedback", "comite", "comité"
+      ]
+    },
+    "it_soporte": {
+      "keywords": [
+        "incidente", "incident", "outage", "caida", "caída", "postmortem",
+        "post-mortem", "soporte", "support", "guardia", "on-call", "oncall",
+        "mantenimiento", "maintenance", "deploy", "release", "migracion",
+        "migración", "infra", "infraestructura", "acceso", "permisos",
+        "proveedor", "vendor", "ticket", "helpdesk"
+      ]
+    }
+  },
+  "default_bucket_for_meetings": "lider_tech",
+  "min_attendees_for_default": 2,
+  "ignore_keywords": [
+    "almuerzo", "lunch", "comida", "vacaciones", "pto", "holiday", "feriado",
+    "focus", "bloqueo", "block", "gym", "personal", "dentista", "medico", "médico"
+  ]
+}

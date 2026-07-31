@@ -10,11 +10,14 @@ import importlib.util
 import os
 import sys
 
-spec = importlib.util.spec_from_file_location(
-    "profile_metrics", os.path.join(os.path.dirname(__file__), "profile_metrics.py")
-)
+SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPTS_DIR)  # profile_metrics imports calendar_time as a sibling
+
+spec = importlib.util.spec_from_file_location("profile_metrics", os.path.join(SCRIPTS_DIR, "profile_metrics.py"))
 pm = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pm)
+
+import calendar_time as ct  # noqa: E402  (imported after sys.path is prepared)
 
 TZ = "America/Mexico_City"  # UTC-6, so a UTC hour maps to local hour - 6
 failures: list[str] = []
@@ -55,6 +58,67 @@ check(pm.format_rows([]) == ["  no activity tracked"], "empty groups say so inst
 check(
     pm.format_rows([("a", "1"), ("long_label", "2")]) == ["  a           1", "  long_label  2"],
     "row labels are padded to a common width",
+)
+
+
+# --- calendar classification ---------------------------------------------
+
+RULES = ct.load_rules()
+ME = "developers@weport.global"
+
+
+def event(summary: str, hours: float = 1.0, attendees: int = 3, **extra) -> dict:
+    start = "2026-07-15T10:00:00-06:00"
+    end = f"2026-07-15T{10 + int(hours):02d}:{int(hours % 1 * 60):02d}:00-06:00"
+    people = [{"email": ME, "self": True, "responseStatus": "accepted"}]
+    people += [{"email": f"other{i}@weport.global"} for i in range(attendees - 1)]
+    return {"summary": summary, "start": {"dateTime": start}, "end": {"dateTime": end}, "attendees": people, **extra}
+
+
+check(ct.classify(event("1:1 con backend"), RULES) == "lider_tech", "a 1:1 is leadership time")
+check(ct.classify(event("Sprint planning"), RULES) == "lider_tech", "planning is leadership time")
+check(ct.classify(event("Postmortem del incidente"), RULES) == "it_soporte", "a postmortem is support time")
+check(ct.classify(event("Revisar accesos del proveedor"), RULES) == "it_soporte", "vendor access is support time")
+check(ct.classify(event("Almuerzo"), RULES) is None, "ignored keywords are not counted")
+check(ct.classify(event("Focus block", attendees=1), RULES) is None, "solo focus blocks are not counted")
+check(
+    ct.classify(event("Charla con cliente", attendees=4), RULES) == "lider_tech",
+    "an unmatched multi-attendee meeting falls back to the default bucket",
+)
+check(ct.classify(event("Cafe", attendees=1), RULES) is None, "an unmatched solo event is not counted")
+
+check(ct.event_duration_hours(event("x", hours=1.5)) == 1.5, "duration is measured from start to end")
+check(
+    ct.event_duration_hours({"start": {"date": "2026-07-15"}, "end": {"date": "2026-07-16"}}) == 0.0,
+    "all-day events contribute no hours",
+)
+
+check(not ct.is_countable(event("x", status="cancelled"), ME), "cancelled events are skipped")
+check(not ct.is_countable(event("x", transparency="transparent"), ME), "events marked free are skipped")
+declined = event("x")
+declined["attendees"][0]["responseStatus"] = "declined"
+check(not ct.is_countable(declined, ME), "declined invitations are skipped")
+check(ct.is_countable(event("x"), ME), "an accepted invitation is countable")
+
+totals = ct.aggregate([event("1:1", hours=1), event("Outage", hours=2), event("Almuerzo", hours=1)], RULES, ME)
+check(totals == {"lider_tech": 1.0, "it_soporte": 2.0}, "aggregate sums hours per bucket and drops the rest")
+
+# --- time split rendering -------------------------------------------------
+
+waka_month = {"categories": [{"name": "AI Coding", "total_seconds": 3600 * 60}, {"name": "Meeting", "total_seconds": 3600 * 9}]}
+split = pm.render_time_split(waka_month, {"lider_tech": 14.0, "it_soporte": 7.0}, 28)
+check(len(split) == 3, "all three buckets render when all have time")
+check(split[0].strip().startswith("lider_tech"), "leadership is listed first")
+check("3h 30m/week" in split[0], "leadership averages 14h over 4 weeks to 3h30m")
+check("15h 00m/week" in split[1], "development averages 60h over 4 weeks to 15h")
+check(
+    all("meeting" not in line.lower() for line in split),
+    "WakaTime meeting time is excluded from the development bucket",
+)
+check(pm.render_time_split({"categories": []}, {}, 28) == [], "no data renders no time_split group")
+check(
+    "1:1" not in "".join(split) and "backend" not in "".join(split),
+    "rendered output carries no event titles",
 )
 
 print()
