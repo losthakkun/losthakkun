@@ -50,6 +50,8 @@ Domain       Integrations, internal platforms, logistics operations
 ## `this_week_in_code`
 
 <!--START_SECTION:waka-->
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C221%20hrs%2027%20mins-blue?style=flat)
+
 📊 **This Week I Spent My Time On** 
 
 ```text
@@ -64,7 +66,7 @@ No Activity Tracked This Week
 ```
 
 
- Last Updated on 30/07/2026 20:30:59 UTC
+ Last Updated on 31/07/2026 08:26:20 UTC
 <!--END_SECTION:waka-->
 
 ## `notes`
