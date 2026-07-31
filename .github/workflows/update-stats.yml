@@ -37,7 +37,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SECTION_NAME: waka
           COMMIT_MESSAGE: "docs(profile): update WakaTime stats"
-          SHOW_TITLE: true
           SHOW_TIMEZONE: false
           SHOW_TOTAL_CODE_TIME: true
           SHOW_PROFILE_VIEWS: false
@@ -51,10 +50,14 @@ jobs:
           SHOW_EDITORS: true
           SHOW_OS: true
           SHOW_LANGUAGE: true
-          # Adds the AI code time badge. The full AI block (SHOW_AI_CODING) is
-          # rendered by our own script instead, so the estimated-cost figure
-          # the action always prints stays off the public profile.
-          SHOW_AI_CODE_TIME: true
+          # Both AI features of the action stay off:
+          #   SHOW_AI_CODE_TIME reads the AI Coding category from
+          #     stats/all_time, which WakaTime has not backfilled — it reported
+          #     6h29m all-time against 24h30m in the last 7 days alone.
+          #   SHOW_AI_CODING always prints a retail-equivalent cost estimate
+          #     with no flag to suppress it.
+          # profile_metrics.py renders both from stats/last_7_days instead.
+          SHOW_AI_CODE_TIME: false
           SHOW_AI_CODING: false
           SYMBOL_VERSION: 3
 
