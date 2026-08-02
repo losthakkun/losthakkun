@@ -66,20 +66,20 @@ agent_workflow — last 7 days
   top_surfaces     Markdown 4h 49m · PHP 4h 28m · JavaScript 4h 11m · Bash 3h 00m
 
 delivery — last 30 days
-  prs_opened     300
-  prs_merged     252 (84% of opened)
-  lines_shipped  +116,768 / -8,678
+  prs_opened     281
+  prs_merged     234 (83% of opened)
+  lines_shipped  +109,061 / -7,833
   active_repos   9
-  contributions  709 (private included)
+  contributions  637 (private included)
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  128 commits  ███████░░░░░░░░░░░░░  33.2%
-  daytime  12-18  223 commits  ████████████░░░░░░░░  57.8%
-  evening  18-24   35 commits  ██░░░░░░░░░░░░░░░░░░   9.1%
+  morning  06-12  107 commits  ██████░░░░░░░░░░░░░░  30.1%
+  daytime  12-18  214 commits  ████████████░░░░░░░░  60.3%
+  evening  18-24   34 commits  ██░░░░░░░░░░░░░░░░░░   9.6%
   night    00-06    0 commits  ░░░░░░░░░░░░░░░░░░░░   0.0%
 ```
 
-_Updated 2026-08-01 07:56 UTC_
+_Updated 2026-08-02 07:58 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## `where_the_time_goes`
