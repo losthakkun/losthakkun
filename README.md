@@ -58,28 +58,28 @@ The metrics below measure output and delivery, not hours in an editor.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions         24 sessions · 91 prompts · 1.58k chars per prompt
-  agent_time       7h 37m (100.0% of tracked time)
-  lines_generated  +6,562 / -68
-  model_mix        Opus 88% · GPT 12%
-  context_moved    57.56M tokens in · 871.62k tokens out
-  top_surfaces     PHP 2h 02m · Other 1h 29m · Markdown 1h 11m · Bash 0h 49m
+  sessions         25 sessions · 120 prompts · 2.05k chars per prompt
+  agent_time       11h 31m (99.51% of tracked time)
+  lines_generated  +11,905 / -95
+  model_mix        Opus 99% · GPT 1%
+  context_moved    54.56M tokens in · 1.52M tokens out
+  top_surfaces     PHP 4h 34m · Other 1h 31m · Markdown 1h 03m · C# 0h 58m
 
 delivery — last 30 days
-  prs_opened     191
-  prs_merged     154 (81% of opened)
-  lines_shipped  +88,461 / -6,823
+  prs_opened     200
+  prs_merged     164 (82% of opened)
+  lines_shipped  +85,000 / -6,771
   active_repos   8
-  contributions  517 (private included)
+  contributions  532 (private included)
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12   62 commits  ████░░░░░░░░░░░░░░░░  20.2%
-  daytime  12-18  205 commits  █████████████░░░░░░░  66.8%
-  evening  18-24   39 commits  ███░░░░░░░░░░░░░░░░░  12.7%
+  morning  06-12   56 commits  ████░░░░░░░░░░░░░░░░  18.1%
+  daytime  12-18  215 commits  ██████████████░░░░░░  69.6%
+  evening  18-24   37 commits  ██░░░░░░░░░░░░░░░░░░  12.0%
   night    00-06    1 commits  ░░░░░░░░░░░░░░░░░░░░   0.3%
 ```
 
-_Updated 2026-08-13 07:06 UTC_
+_Updated 2026-08-14 07:02 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## `where_the_time_goes`
