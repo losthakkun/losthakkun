@@ -296,10 +296,24 @@ check(pm.recolor_bars("no bars here") == "no bars here", "text without bars is u
 check(len(recolored) == len(RAW), "the bar keeps its width, so column alignment survives")
 
 SECTION = f"before\n<!--START_SECTION:waka-->\n{RAW}\n<!--END_SECTION:waka-->\nafter ⬜"
-patched = pm.recolor_waka_section(SECTION)
+patched = pm.restyle_waka_section(SECTION)
 check("🟦🟦⬛⬛⬛" in patched, "the waka section is recolored in place")
 check(patched.endswith("after ⬜"), "content outside the markers is left alone")
-check(pm.recolor_waka_section("no markers ⬜") == "no markers ⬜", "a README without the waka section is unchanged")
+check(pm.restyle_waka_section("no markers ⬜") == "no markers ⬜", "a README without the waka section is unchanged")
+
+check(pm.strip_label_emoji("💬 Programming Languages: ") == "Programming Languages: ", "label emoji are dropped")
+check(pm.strip_label_emoji("🔥 Editors: ") == "Editors: ", "every decorated label is covered")
+check(pm.strip_label_emoji("Bash 1 hr") == "Bash 1 hr", "undecorated text is untouched")
+check(
+    "📊" not in pm.restyle_waka_section(
+        "<!--START_SECTION:waka-->\n📊 **This Week**\n💻 Operating System: \n<!--END_SECTION:waka-->"
+    ),
+    "the section restyle strips emoji as well as repainting bars",
+)
+check(
+    "💬" in pm.restyle_waka_section("outside the markers: 💬 kept"),
+    "emoji outside the markers are not this function's business",
+)
 
 print()
 if failures:

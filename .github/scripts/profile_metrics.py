@@ -406,13 +406,27 @@ def text_bar(percent: float, width: int = TEXT_BAR_WIDTH) -> str:
     return "🟦" * filled + "⬛" * (width - filled)
 
 
-def recolor_waka_section(content: str) -> str:
-    """Apply the palette inside the waka markers and nowhere else.
+# The action decorates its labels with colour emoji. The rest of the page is
+# type and monochrome glyphs, so these are stripped rather than translated —
+# the labels read fine on their own. Anything outside this list is left alone.
+WAKA_LABEL_EMOJI = ("📊 ", "💬 ", "🔥 ", "💻 ", "🐱‍💻 ", "⌚ ", "📅 ")
+
+
+def strip_label_emoji(text: str) -> str:
+    for emoji in WAKA_LABEL_EMOJI:
+        text = text.replace(emoji, "")
+    return text
+
+
+def restyle_waka_section(content: str) -> str:
+    """Repaint the bars and drop the colour emoji, inside the markers only.
 
     The action rewrites that section wholesale on every run, so this has to run
     after it — which is exactly where this script sits in the workflow.
     """
-    return WAKA_SECTION.sub(lambda match: match[1] + recolor_bars(match[2]) + match[3], content)
+    return WAKA_SECTION.sub(
+        lambda match: match[1] + strip_label_emoji(recolor_bars(match[2])) + match[3], content
+    )
 
 
 def user_node_id(token: str, login: str) -> str:
@@ -647,7 +661,7 @@ def write_block(block: str) -> bool:
     updated = pattern.sub(f"{START}\n{block}\n{END}", content)
     # The waka action ran earlier in the same job and rewrote its own section
     # with the upstream palette, so repaint it while the file is already open.
-    updated = recolor_waka_section(updated)
+    updated = restyle_waka_section(updated)
     if updated == content:
         return False
 
