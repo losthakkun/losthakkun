@@ -44,6 +44,19 @@ for expected, stamps in {
 }.items():
     check(only_bucket(stamps) == [expected], f"{expected} bucket covers its local window")
 
+check(pm.text_bar(0) == "⬛" * 20, "an empty bar is all track")
+check(pm.text_bar(100) == "🟦" * 20, "a full bar is all fill")
+check(pm.text_bar(50) == "🟦" * 10 + "⬛" * 10, "half is half")
+check(len(pm.text_bar(37)) == 20, "every bar is the same width, so the trailing column stays aligned")
+check(
+    "█" not in "".join(pm.render_commit_rhythm(["2026-07-15T18:00:00Z"], TZ)),
+    "the rhythm group uses the same palette as the waka section, not the old ASCII bar",
+)
+check(
+    any("1 commit " in line for line in pm.render_commit_rhythm(["2026-07-15T18:00:00Z"], TZ)),
+    "a single commit is singular, padded to keep the column width",
+)
+
 check(pm.render_commit_rhythm([], TZ) == [], "no commits renders no rhythm group")
 check(bool(pm.render_commit_rhythm(["2026-07-15T18:00:00Z"], "Not/AZone")), "unknown timezone falls back to UTC")
 

@@ -1,25 +1,19 @@
 ## `whoami`
 
-```ts
-const asarel = {
-  name: "Asarel Alejandro Núñez Segoviano",
-  role: "Lead Software Engineer · Product Engineering",
-  company: "WEPORT (Radiant Logistics)",
-  location: "Mexico City, Mexico",
-  education: "Universidad Tecnológica de México",
-  focus: [
-    "End-to-end product ownership",
-    "Agentic engineering workflows",
-    "AI governance and context harnessing",
-    "Data platforms and decision visibility"
-  ]
-};
+```txt
+Asarel Alejandro Núñez Segoviano
+Lead Software Engineer · Product Engineering
+WEPORT (Radiant Logistics) · Mexico City · Spanish / English
+
+
+  human    need ──▶ discovery ──▶ scope ──▶ contracts ──▶ review ──▶ measure
+                                                │            ▲
+  agents                                        └─ build ────┘
 ```
 
-I lead an engineering team through the shift from conventional development to agentic engineering.
-My work sits where product decisions, system architecture, and AI leverage meet: I own the
-contracts and the review, agents execute inside them, and the result is measured against
-business outcomes rather than output volume.
+Ten years of shipping software, now spent on the part that is actually hard: making agent
+leverage trustworthy. I own the contracts and the review, agents execute inside them, and
+nothing counts as done until a number says it mattered.
 
 ## `current_scope`
 
@@ -28,19 +22,32 @@ business outcomes rather than output volume.
 + Designing agentic workflows governed by TDD, OpenSpec and adversarial review
 + Building the harnessing layer that keeps agent context governed and reproducible
 + Tuning AI economics — token cost measured against delivered capacity
-+ Driving technology adoption from C-level to operators
++ Driving adoption and enablement from C-level to operators, new hires and vendors
+```
+
+## `track`
+
+```txt
+2025 · now    WEPORT / Radiant Logistics    Lead Software Engineer · freight forwarding
+2023 · 2025   VOXPOP                        Software Development Manager · retail streaming
+2016 · 2022   VOXPOP                        Full-stack · AndroidTV, React Native, AWS
+2018 · now    Independent                   React / React Native consulting
+
+Before the agents: native modules, device fleets, streaming platforms, IT and hardware.
+The unglamorous half of technology innovation is the half that teaches you what breaks.
 ```
 
 ## `stack`
 
 ```txt
-Agentic      Claude Code, MCP servers, multi-agent review, in-house harnessing layer
+Agentic      Claude Code, MCP servers, multi-agent adversarial review, in-house harnessing
+Method       TDD, Red-Green-Refactor, OpenSpec, contracts before code
 Languages    TypeScript, JavaScript, Node.js, Python, PHP, Bash
 Interfaces   React, Vite, Next.js, React Native, Tailwind
 Backend      Node.js, Express, Laravel, Python APIs
 Data         PostgreSQL, MySQL, MongoDB, DynamoDB, medallion data lakes
 Cloud        AWS, Serverless, Docker, GitHub Actions
-Domain       Freight forwarding, internal platforms, integrations
+Domain       Freight forwarding, retail streaming, internal platforms, integrations
 ```
 
 ## `engineering_principles`
@@ -53,14 +60,10 @@ Domain       Freight forwarding, internal platforms, integrations
 5. Automate the boring parts, keep the important parts explicit.
 ```
 
-## `how_i_work`
+## `signals`
 
-```txt
-I work agent-first: I own the architecture, the contracts, and the review;
-agents execute the mechanical work under those constraints.
-The metrics below measure output and delivery, not hours in an editor.
-They are generated daily from WakaTime and the GitHub API — nothing here is self-reported.
-```
+Generated daily from WakaTime and the GitHub API. They measure output and delivery,
+not hours in an editor, and nothing here is typed in by hand.
 
 <!--START_SECTION:agent-impact-->
 ```txt
@@ -123,28 +126,23 @@ Linux                    15 hrs 36 mins      🟦🟦🟦🟦🟦🟦🟦🟦�
 
 ## `thesis`
 
-```txt
-The split between developer, product manager and QA is dissolving. What
-replaces it is the product engineer as the base unit: one person carrying a
-business need from discovery to a measured outcome, with agents executing the
-mechanical work inside contracts a human owns. Teams get smaller and their
-scope gets wider.
+The split between developer, product manager and QA is dissolving. What replaces it is the
+product engineer as the base unit: one person carrying a business need from discovery to a
+measured outcome, with agents executing the mechanical work inside contracts a human owns.
+Teams get smaller and their scope gets wider.
 
-That is not a tooling upgrade, it changes what the job is. The hard part was
-never getting a model to write code — it is making the leverage trustworthy:
-context that is governed, agent output that is auditable, data the
-organization can actually decide with, and a number at the end that says
-whether the work mattered.
+That is not a tooling upgrade, it changes what the job is. The hard part was never getting a
+model to write code — it is making the leverage trustworthy: context that is governed, agent
+output that is auditable, data the organization can actually decide with, and a number at the
+end that says whether the work mattered.
 
-So what I am building toward is turning that into a discipline instead of a
-craft: standards, guardrails and enablement, so the practice survives being
-handed to someone else.
+So what I am building toward is turning that into a discipline instead of a craft — standards,
+guardrails, enablement — so the practice survives being handed to someone else. Right now it is
+mostly folklore passed between people who happened to figure it out.
 
-Two things I do not buy. Autonomy without governance — broad access with no
-contracts, acceptance criteria or audit trail is velocity you cannot trace.
-And metrics theater: this README dropped its own lead-time metric because the
-number was accurate and measured nothing.
-```
+Two things I do not buy. **Autonomy without governance:** broad access with no contracts,
+acceptance criteria or audit trail is velocity you cannot trace. And **metrics theater:** this
+README dropped its own lead-time metric because the number was accurate and measured nothing.
 
 <!--
 losthakkun/losthakkun is a special repository because its README.md

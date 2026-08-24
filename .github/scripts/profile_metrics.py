@@ -320,6 +320,21 @@ def recolor_bars(text: str) -> str:
     return text.translate(BAR_PALETTE)
 
 
+TEXT_BAR_WIDTH = 20
+
+
+def text_bar(percent: float, width: int = TEXT_BAR_WIDTH) -> str:
+    """A progress bar in the same palette the waka section is repainted to.
+
+    The groups this script renders and the group the upstream action renders sit
+    a few lines apart in the README, so they have to speak the same visual
+    language. All bars are the same width, which keeps the trailing percentage
+    column aligned even though the blocks are wider than a monospace cell.
+    """
+    filled = round(percent / (100 / width))
+    return "🟦" * filled + "⬛" * (width - filled)
+
+
 def recolor_waka_section(content: str) -> str:
     """Apply the palette inside the waka markers and nowhere else.
 
@@ -405,8 +420,11 @@ def render_commit_rhythm(timestamps: list[str], tz_name: str) -> list[str]:
     lines = []
     for (label, window), count in zip(RHYTHM_BUCKETS, buckets):
         percent = count / total * 100
-        bar = "█" * round(percent / 5) + "░" * (20 - round(percent / 5))
-        lines.append(f"  {label.ljust(7)}  {window}  {f'{count:,}'.rjust(count_width)} commits  {bar}  {percent:4.1f}%")
+        # Padded so a single commit reads correctly without shifting the column.
+        noun = "commit " if count == 1 else "commits"
+        lines.append(
+            f"  {label.ljust(7)}  {window}  {f'{count:,}'.rjust(count_width)} {noun}  {text_bar(percent)}  {percent:4.1f}%"
+        )
     return lines
 
 
@@ -455,9 +473,8 @@ def render_time_split(waka: dict[str, Any], calendar_totals: dict[str, float], d
     for bucket, value in ranked:
         per_week = weekly[bucket]
         percent = value / total * 100
-        bar = "█" * round(percent / 5) + "░" * (20 - round(percent / 5))
         rendered = f"{int(per_week)}h {int(per_week % 1 * 60):02d}m".rjust(value_width)
-        lines.append(f"  {bucket.ljust(label_width)}  {rendered}/week  {bar}  {percent:4.1f}%")
+        lines.append(f"  {bucket.ljust(label_width)}  {rendered}/week  {text_bar(percent)}  {percent:4.1f}%")
     return lines
 
 
