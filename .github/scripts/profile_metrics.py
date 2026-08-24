@@ -98,6 +98,39 @@ def compact_duration(seconds: float) -> str:
     return f"{total_minutes // 60}h {total_minutes % 60:02d}m"
 
 
+def humanize_span(seconds: float) -> str:
+    """A duration read as elapsed time: '30m', '3h 12m', '3d 04h'.
+
+    Distinct from compact_duration, which always answers in hours because it
+    describes time spent. A lead time of three days reads worse as '76h 00m'.
+    """
+    if seconds < 3600:
+        return f"{int(seconds // 60)}m"
+    if seconds < 3600 * 48:
+        return compact_duration(seconds)
+    hours = int(seconds // 3600)
+    return f"{hours // 24}d {hours % 24:02d}h"
+
+
+def median(values: list[float]) -> float:
+    """Median, or 0.0 for an empty sample.
+
+    The median rather than the mean: one long-running PR left open over a
+    weekend should not redefine the typical lead time.
+    """
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    middle = len(ordered) // 2
+    if len(ordered) % 2:
+        return float(ordered[middle])
+    return (ordered[middle - 1] + ordered[middle]) / 2
+
+
+def parse_timestamp(stamp: str) -> datetime:
+    return datetime.strptime(stamp, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+
+
 def fetch_wakatime(api_key: str, stats_range: str = "last_7_days") -> dict[str, Any]:
     """Read a stats aggregate.
 
@@ -154,11 +187,66 @@ def render_agent_workflow(waka: dict[str, Any]) -> list[tuple[str, str]]:
     if tokens_in or tokens_out:
         rows.append(("context_moved", f"{humanize(tokens_in)} tokens in · {humanize(tokens_out)} tokens out"))
 
+    # Leverage is the metric that actually describes agent-first work: not how
+    # much time went in, but how much shipped per unit of it. Both ratios stay
+    # silent under an hour of agent time, where they swing too hard to mean
+    # anything.
+    agent_seconds = ai_category["total_seconds"] if ai_category else 0
+    if additions and agent_seconds >= 3600:
+        leverage = f"{additions / (agent_seconds / 3600):,.0f} lines per agent hour"
+        if prompts:
+            leverage += f" · {additions / prompts:,.0f} lines per prompt"
+        rows.append(("leverage", leverage))
+
+    if additions and tokens_in:
+        rows.append(("context_cost", f"{tokens_in / additions:,.0f} tokens in per generated line"))
+
     languages = waka.get("languages", [])[:4]
     if languages:
         rows.append(("top_surfaces", " · ".join(f"{lang['name']} {compact_duration(lang['total_seconds'])}" for lang in languages)))
 
     return rows
+
+
+def render_flow(prs: list[dict[str, Any]]) -> list[tuple[str, str]]:
+    """Delivery flow over the merged PRs already fetched for the footprint.
+
+    Lead time and PR size say how the work moves rather than how much of it
+    there is: short lead times and small batches are the shape of continuous
+    delivery, and both come free from data the footprint query already returns.
+    """
+    # Both rows describe shipped work, so an unmerged PR contributes to
+    # neither — it has no lead time yet, and its churn has not landed.
+    shipped = [pr for pr in prs if pr.get("merged_at")]
+    lead_times = [
+        (parse_timestamp(pr["merged_at"]) - parse_timestamp(pr["created_at"])).total_seconds()
+        for pr in shipped
+        if pr.get("created_at")
+    ]
+    sizes = [pr["size"] for pr in shipped if pr.get("size")]
+
+    rows: list[tuple[str, str]] = []
+    if lead_times:
+        rows.append(("lead_time", f"median {humanize_span(median(lead_times))} open → merge"))
+    if sizes:
+        rows.append(("pr_size", f"median {median(sizes):,.0f} lines per merged PR"))
+    return rows
+
+
+def active_days_row(timestamps: list[str], tz_name: str, days: int) -> tuple[str, str] | None:
+    """Distinct local days carrying at least one commit.
+
+    Consistency is worth publishing on its own: a month of steady delivery and
+    a month with one enormous push produce the same commit count.
+    """
+    if not timestamps:
+        return None
+    try:
+        tz = ZoneInfo(tz_name)
+    except (ZoneInfoNotFoundError, ValueError):
+        tz = timezone.utc
+    unique = {parse_timestamp(stamp).astimezone(tz).date() for stamp in timestamps}
+    return ("active_days", f"{len(unique)} of {days} days")
 
 
 def search_count(token: str, query: str) -> int:
@@ -170,14 +258,16 @@ def search_count(token: str, query: str) -> int:
     return body["data"]["search"]["issueCount"]
 
 
-def merged_pr_footprint(token: str, query: str) -> tuple[int, int, set[str]]:
-    """Sum additions/deletions and count distinct repositories across merged PRs.
+def merged_pr_footprint(token: str, query: str) -> tuple[int, int, set[str], list[dict[str, Any]]]:
+    """Sum additions/deletions, count distinct repositories, and time each merged PR.
 
     Repository names are used only to size the footprint; they are never
-    rendered, so private org repos stay private.
+    rendered, so private org repos stay private. createdAt/mergedAt ride along
+    on the same query so flow metrics cost no extra requests.
     """
     additions = deletions = 0
     repositories: set[str] = set()
+    prs: list[dict[str, Any]] = []
     cursor: str | None = None
 
     for _ in range(6):  # up to 600 PRs, plenty for a 30-day window
@@ -185,7 +275,15 @@ def merged_pr_footprint(token: str, query: str) -> tuple[int, int, set[str]]:
             "query": """
               query ($q: String!, $cursor: String) {
                 search(query: $q, type: ISSUE, first: 100, after: $cursor) {
-                  nodes { ... on PullRequest { additions deletions repository { nameWithOwner } } }
+                  nodes {
+                    ... on PullRequest {
+                      additions
+                      deletions
+                      createdAt
+                      mergedAt
+                      repository { nameWithOwner }
+                    }
+                  }
                   pageInfo { hasNextPage endCursor }
                 }
               }
@@ -196,15 +294,57 @@ def merged_pr_footprint(token: str, query: str) -> tuple[int, int, set[str]]:
         for node in page["nodes"]:
             if not node:
                 continue
-            additions += node.get("additions") or 0
-            deletions += node.get("deletions") or 0
+            node_additions = node.get("additions") or 0
+            node_deletions = node.get("deletions") or 0
+            additions += node_additions
+            deletions += node_deletions
             if node.get("repository"):
                 repositories.add(node["repository"]["nameWithOwner"])
+            prs.append(
+                {
+                    "created_at": node.get("createdAt"),
+                    "merged_at": node.get("mergedAt"),
+                    "size": node_additions + node_deletions,
+                }
+            )
         if not page["pageInfo"]["hasNextPage"]:
             break
         cursor = page["pageInfo"]["endCursor"]
 
-    return additions, deletions, repositories
+    return additions, deletions, repositories, prs
+
+
+# The upstream waka-readme-stats action offers only █░, ⣿⣀ and ⬛⬜. On a dark
+# theme the ⬜ empty block is the brightest thing in the row, so a bar at 3%
+# reads as nearly full. Repainting the filled half blue and letting the empty
+# half recede restores the gauge.
+BAR_FILLED, BAR_EMPTY = "⬛", "⬜"
+BAR_PALETTE = str.maketrans({BAR_FILLED: "🟦", BAR_EMPTY: "⬛"})
+WAKA_SECTION = re.compile(
+    r"(<!--START_SECTION:waka-->)(.*?)(<!--END_SECTION:waka-->)", re.DOTALL
+)
+
+
+def recolor_bars(text: str) -> str:
+    """Repaint the action's progress bars, once.
+
+    Guarded on the presence of the action's empty block: after a repaint none
+    remains, so a rerun is a no-op. Without that guard the single-pass
+    translation would repaint the already-recoloured empty blocks as filled
+    ones and every bar would read 100%.
+    """
+    if BAR_EMPTY not in text:
+        return text
+    return text.translate(BAR_PALETTE)
+
+
+def recolor_waka_section(content: str) -> str:
+    """Apply the palette inside the waka markers and nowhere else.
+
+    The action rewrites that section wholesale on every run, so this has to run
+    after it — which is exactly where this script sits in the workflow.
+    """
+    return WAKA_SECTION.sub(lambda match: match[1] + recolor_bars(match[2]) + match[3], content)
 
 
 def user_node_id(token: str, login: str) -> str:
@@ -346,7 +486,7 @@ def render_delivery(token: str, login: str) -> tuple[list[tuple[str, str]], set[
     opened = search_count(token, f"is:pr author:{login} created:>={since}")
     merged = search_count(token, f"is:pr author:{login} is:merged merged:>={since}")
     reviewed = search_count(token, f"is:pr reviewed-by:{login} -author:{login} updated:>={since}")
-    additions, deletions, repositories = merged_pr_footprint(
+    additions, deletions, repositories, prs = merged_pr_footprint(
         token, f"is:pr author:{login} is:merged merged:>={since}"
     )
 
@@ -380,6 +520,7 @@ def render_delivery(token: str, login: str) -> tuple[list[tuple[str, str]], set[
     if merged:
         merge_rate = f" ({merged / opened * 100:.0f}% of opened)" if opened else ""
         rows.append(("prs_merged", f"{merged}{merge_rate}"))
+    rows += render_flow(prs)
     if additions or deletions:
         rows.append(("lines_shipped", f"+{additions:,} / -{deletions:,}"))
     if repositories:
@@ -429,6 +570,9 @@ def write_block(block: str) -> bool:
         raise SystemExit(f"markers {START} / {END} not found in README.md")
 
     updated = pattern.sub(f"{START}\n{block}\n{END}", content)
+    # The waka action ran earlier in the same job and rewrote its own section
+    # with the upstream palette, so repaint it while the file is already open.
+    updated = recolor_waka_section(updated)
     if updated == content:
         return False
 
@@ -496,6 +640,10 @@ def main() -> int:
     timestamps = commit_hours(
         github_token, user_node_id(github_token, login), repositories, f"{since}T00:00:00Z"
     )
+    cadence = active_days_row(timestamps, tz_name, DELIVERY_WINDOW_DAYS)
+    if cadence:
+        delivery.append(cadence)
+
     rhythm = render_commit_rhythm(timestamps, tz_name)
     time_split = build_time_split(wakatime_key, tz_name)
 

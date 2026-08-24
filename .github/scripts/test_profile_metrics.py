@@ -163,6 +163,84 @@ check(
     "rendered output carries no event titles",
 )
 
+# --- derived statistics ---------------------------------------------------
+
+check(pm.median([3]) == 3, "median of one value is that value")
+check(pm.median([1, 2, 3, 4]) == 2.5, "median of an even count averages the middle pair")
+check(pm.median([]) == 0.0, "median of nothing is zero instead of raising")
+check(pm.humanize_span(1800) == "30m", "spans under an hour render as minutes")
+check(pm.humanize_span(3600 * 3 + 720) == "3h 12m", "spans under two days render as hours")
+check(pm.humanize_span(3600 * 76) == "3d 04h", "spans of two days or more render as days")
+
+# --- agent leverage -------------------------------------------------------
+# Leverage and context cost are ratios over data already fetched. They must
+# stay silent on samples too small to mean anything rather than print a number
+# that swings wildly day to day.
+
+WAKA = {
+    "categories": [{"name": "AI Coding", "total_seconds": 3600 * 10, "percent": 98.5}],
+    "ai_sessions": 29,
+    "ai_prompt_events_total": 100,
+    "ai_additions": 10_000,
+    "ai_deletions": 13,
+    "ai_input_tokens": 5_000_000,
+    "ai_output_tokens": 1_000_000,
+    "languages": [{"name": "PHP", "total_seconds": 3600 * 6}],
+}
+agent_rows = dict(pm.render_agent_workflow(WAKA))
+check(agent_rows["leverage"] == "1,000 lines per agent hour · 100 lines per prompt", "leverage divides lines by agent hours and prompts")
+check(agent_rows["context_cost"] == "500 tokens in per generated line", "context cost divides input tokens by generated lines")
+check(
+    "leverage" not in dict(pm.render_agent_workflow({**WAKA, "categories": [{"name": "AI Coding", "total_seconds": 600, "percent": 5}]})),
+    "leverage stays silent below an hour of agent time",
+)
+check("context_cost" not in dict(pm.render_agent_workflow({**WAKA, "ai_additions": 0})), "context cost needs generated lines")
+
+# --- delivery flow --------------------------------------------------------
+
+PRS = [
+    {"created_at": "2026-08-01T10:00:00Z", "merged_at": "2026-08-01T12:00:00Z", "size": 100},
+    {"created_at": "2026-08-02T10:00:00Z", "merged_at": "2026-08-02T14:00:00Z", "size": 300},
+    {"created_at": "2026-08-03T10:00:00Z", "merged_at": "2026-08-03T16:00:00Z", "size": 200},
+]
+flow = dict(pm.render_flow(PRS))
+check(flow["lead_time"] == "median 4h 00m open → merge", "lead time is the median of open-to-merge spans")
+check(flow["pr_size"] == "median 200 lines per merged PR", "PR size is the median churn per merged PR")
+check(pm.render_flow([]) == [], "no merged PRs renders no flow rows")
+check(
+    pm.render_flow([{"created_at": "2026-08-01T10:00:00Z", "merged_at": None, "size": 10}]) == [],
+    "an unmerged PR contributes no lead time",
+)
+
+# 2026-08-01T05:00Z is 2026-07-31 locally in UTC-6, so these are two days.
+check(
+    pm.active_days_row(["2026-08-01T05:00:00Z", "2026-08-01T18:00:00Z"], TZ, 30) == ("active_days", "2 of 30 days"),
+    "active days are counted as distinct local dates",
+)
+check(
+    pm.active_days_row(["2026-08-01T18:00:00Z", "2026-08-01T19:00:00Z"], TZ, 30) == ("active_days", "1 of 30 days"),
+    "two commits on the same local day count once",
+)
+check(pm.active_days_row([], TZ, 30) is None, "no commits renders no active_days row")
+
+# --- waka bar recolor -----------------------------------------------------
+# The upstream action only offers █░, ⣿⣀ and ⬛⬜. On a dark theme its ⬜ empty
+# block is the loudest thing in the bar, which reads as an inverted gauge, so
+# the filled half becomes blue and the empty half recedes.
+
+RAW = "PHP  6 hrs  ⬛⬛⬜⬜⬜  39.26 %"
+recolored = pm.recolor_bars(RAW)
+check(recolored == "PHP  6 hrs  🟦🟦⬛⬛⬛  39.26 %", "filled blocks turn blue and empty blocks recede")
+check(pm.recolor_bars(recolored) == recolored, "recoloring is idempotent, so a rerun cannot repaint the bar")
+check(pm.recolor_bars("no bars here") == "no bars here", "text without bars is untouched")
+check(len(recolored) == len(RAW), "the bar keeps its width, so column alignment survives")
+
+SECTION = f"before\n<!--START_SECTION:waka-->\n{RAW}\n<!--END_SECTION:waka-->\nafter ⬜"
+patched = pm.recolor_waka_section(SECTION)
+check("🟦🟦⬛⬛⬛" in patched, "the waka section is recolored in place")
+check(patched.endswith("after ⬜"), "content outside the markers is left alone")
+check(pm.recolor_waka_section("no markers ⬜") == "no markers ⬜", "a README without the waka section is unchanged")
+
 print()
 if failures:
     print(f"{len(failures)} failure(s)")
