@@ -72,7 +72,6 @@ agent_workflow — last 7 days
   sessions         29 sessions · 146 prompts · 1.63k chars per prompt
   agent_time       15h 22m (98.54% of tracked time)
   lines_generated  +14,805 / -13
-  model_mix        Opus 100% · main loop only
   context_moved    14.26M tokens in · 1.92M tokens out
   leverage         963 lines per agent hour · 101 lines per prompt
   context_cost     963 tokens in per generated line
@@ -84,7 +83,7 @@ delivery — last 30 days
   pr_size        median 268 lines per merged PR
   lines_shipped  +87,213 / -6,969
   active_repos   10
-  contributions  513 (private included)
+  contributions  514 (private included)
   active_days    24 of 30 days
 
 commit_rhythm — last 30 days · America/Mexico_City
@@ -94,7 +93,7 @@ commit_rhythm — last 30 days · America/Mexico_City
   night    00-06    1 commit   ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   0.3%
 ```
 
-_Updated 2026-08-24 03:08 UTC_
+_Updated 2026-08-24 03:15 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## `where_the_time_goes`
@@ -106,19 +105,19 @@ _Updated 2026-08-24 03:08 UTC_
 
 ```text
 💬 Programming Languages: 
-PHP                      6 hrs 7 mins        ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   39.26 % 
-Other                    4 hrs 3 mins        ⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   26.06 % 
-HTML                     2 hrs 42 mins       ⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   17.35 % 
-Bash                     1 hr 5 mins         ⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   07.01 % 
-Python                   28 mins             ⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   03.01 % 
+PHP                      6 hrs 7 mins        🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   39.26 % 
+Other                    4 hrs 3 mins        🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   26.06 % 
+HTML                     2 hrs 42 mins       🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   17.35 % 
+Bash                     1 hr 5 mins         🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   07.01 % 
+Python                   28 mins             🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   03.01 % 
 
 🔥 Editors: 
-Claude Code              14 hrs 50 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜   95.11 % 
-VS Code                  40 mins             ⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   04.30 % 
-Opencode Cli             5 mins              ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   00.60 % 
+Claude Code              14 hrs 50 mins      🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛   95.11 % 
+VS Code                  40 mins             🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   04.30 % 
+Opencode Cli             5 mins              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   00.60 % 
 
 💻 Operating System: 
-Linux                    15 hrs 36 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
+Linux                    15 hrs 36 mins      🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦   100.00 % 
 ```
 
 
