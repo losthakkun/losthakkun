@@ -98,20 +98,6 @@ def compact_duration(seconds: float) -> str:
     return f"{total_minutes // 60}h {total_minutes % 60:02d}m"
 
 
-def humanize_span(seconds: float) -> str:
-    """A duration read as elapsed time: '30m', '3h 12m', '3d 04h'.
-
-    Distinct from compact_duration, which always answers in hours because it
-    describes time spent. A lead time of three days reads worse as '76h 00m'.
-    """
-    if seconds < 3600:
-        return f"{int(seconds // 60)}m"
-    if seconds < 3600 * 48:
-        return compact_duration(seconds)
-    hours = int(seconds // 3600)
-    return f"{hours // 24}d {hours % 24:02d}h"
-
-
 def median(values: list[float]) -> float:
     """Median, or 0.0 for an empty sample.
 
@@ -211,26 +197,22 @@ def render_agent_workflow(waka: dict[str, Any]) -> list[tuple[str, str]]:
 def render_flow(prs: list[dict[str, Any]]) -> list[tuple[str, str]]:
     """Delivery flow over the merged PRs already fetched for the footprint.
 
-    Lead time and PR size say how the work moves rather than how much of it
-    there is: short lead times and small batches are the shape of continuous
-    delivery, and both come free from data the footprint query already returns.
+    Batch size says how the work moves rather than how much of it there is,
+    and it comes free from data the footprint query already returns.
+
+    Open-to-merge lead time is deliberately not published. In an agentic
+    workflow the review happens inside the loop, before the pull request
+    exists, so the PR-to-merge span measures none of it — and a median of a
+    couple of minutes invites exactly the wrong inference about whether the
+    work was reviewed at all.
     """
-    # Both rows describe shipped work, so an unmerged PR contributes to
-    # neither — it has no lead time yet, and its churn has not landed.
+    # An unmerged PR contributes nothing: its churn has not landed.
     shipped = [pr for pr in prs if pr.get("merged_at")]
-    lead_times = [
-        (parse_timestamp(pr["merged_at"]) - parse_timestamp(pr["created_at"])).total_seconds()
-        for pr in shipped
-        if pr.get("created_at")
-    ]
     sizes = [pr["size"] for pr in shipped if pr.get("size")]
 
-    rows: list[tuple[str, str]] = []
-    if lead_times:
-        rows.append(("lead_time", f"median {humanize_span(median(lead_times))} open → merge"))
-    if sizes:
-        rows.append(("pr_size", f"median {median(sizes):,.0f} lines per merged PR"))
-    return rows
+    if not sizes:
+        return []
+    return [("pr_size", f"median {median(sizes):,.0f} lines per merged PR")]
 
 
 def active_days_row(timestamps: list[str], tz_name: str, days: int) -> tuple[str, str] | None:

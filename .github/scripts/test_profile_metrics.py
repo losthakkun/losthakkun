@@ -168,9 +168,6 @@ check(
 check(pm.median([3]) == 3, "median of one value is that value")
 check(pm.median([1, 2, 3, 4]) == 2.5, "median of an even count averages the middle pair")
 check(pm.median([]) == 0.0, "median of nothing is zero instead of raising")
-check(pm.humanize_span(1800) == "30m", "spans under an hour render as minutes")
-check(pm.humanize_span(3600 * 3 + 720) == "3h 12m", "spans under two days render as hours")
-check(pm.humanize_span(3600 * 76) == "3d 04h", "spans of two days or more render as days")
 
 # --- agent leverage -------------------------------------------------------
 # Leverage and context cost are ratios over data already fetched. They must
@@ -204,12 +201,12 @@ PRS = [
     {"created_at": "2026-08-03T10:00:00Z", "merged_at": "2026-08-03T16:00:00Z", "size": 200},
 ]
 flow = dict(pm.render_flow(PRS))
-check(flow["lead_time"] == "median 4h 00m open → merge", "lead time is the median of open-to-merge spans")
 check(flow["pr_size"] == "median 200 lines per merged PR", "PR size is the median churn per merged PR")
+check("lead_time" not in flow, "open-to-merge lead time is not published")
 check(pm.render_flow([]) == [], "no merged PRs renders no flow rows")
 check(
     pm.render_flow([{"created_at": "2026-08-01T10:00:00Z", "merged_at": None, "size": 10}]) == [],
-    "an unmerged PR contributes no lead time",
+    "an unmerged PR contributes no churn",
 )
 
 # 2026-08-01T05:00Z is 2026-07-31 locally in UTC-6, so these are two days.
