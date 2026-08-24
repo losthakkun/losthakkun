@@ -13,15 +13,20 @@ WEPORT (Radiant Logistics) · Mexico City · Spanish / English
 
 Ten years of shipping software, now spent on the part that is actually hard: making agent
 leverage trustworthy. I own the contracts and the review, agents execute inside them, and
-nothing counts as done until a number says it mattered.
+nothing counts as done until a number says it mattered. The scope runs past the codebase —
+IT infrastructure, security and governance, and getting areas outside engineering onto AI
+and automation.
 
 ## ◆ `current_scope`
 
 ```txt
 + Owning initiatives end to end — discovery, MVP scope, build, deploy, adoption
++ Choosing the stack per project against technical and commercial constraints
 + Designing agentic workflows governed by TDD, OpenSpec and adversarial review
 + Building the harnessing layer that keeps agent context governed and reproducible
 + Tuning AI economics — token cost measured against delivered capacity
++ Improving IT infrastructure alongside product — security, governance, centralization
++ Bringing other areas and stakeholders onto AI and automation, not only engineering
 + Driving adoption and enablement from C-level to operators, new hires and vendors
 ```
 
@@ -33,21 +38,39 @@ nothing counts as done until a number says it mattered.
 2016 · 2022   VOXPOP                        Full-stack · AndroidTV, React Native, AWS
 2018 · now    Independent                   React / React Native consulting
 
-Before the agents: native modules, device fleets, streaming platforms, IT and hardware.
-The unglamorous half of technology innovation is the half that teaches you what breaks.
+Native modules, device fleets, streaming platforms, hardware, IT operations. Not a closed
+chapter — infrastructure is still part of the scope, and the unglamorous half of technology
+innovation is the half that teaches you what breaks.
 ```
 
 ## ≡ `stack`
 
+Fundamentals are the part that transfers. Data structures, concurrency, protocols, how a system
+behaves under load — those hold across every language below, and they are how I can tell when an
+agent's answer is wrong. Memorizing a framework's surface stopped being the bottleneck; what is
+scarce now is deciding which stack actually fits a problem, technically and commercially, and
+getting an organization to adopt the change. So the list is what the work currently runs on, not
+a claim to mastery of all of it.
+
 ```txt
-Agentic      Claude Code, MCP servers, multi-agent adversarial review, in-house harnessing
-Method       TDD, Red-Green-Refactor, OpenSpec, contracts before code
-Languages    TypeScript, JavaScript, Node.js, Python, PHP, Bash
-Interfaces   React, Vite, Next.js, React Native, Tailwind
-Backend      Node.js, Express, Laravel, Python APIs
-Data         PostgreSQL, MySQL, MongoDB, DynamoDB, medallion data lakes
-Cloud        AWS, Serverless, Docker, GitHub Actions
-Domain       Freight forwarding, retail streaming, internal platforms, integrations
+Foundations    Data structures, concurrency, protocols, system design, debugging from
+               first principles
+Judgment       Stack selection against technical and commercial constraints, MVP scoping,
+               trade-off calls under ambiguity, adoption and enablement
+Organization   IT infrastructure, security and governance, process centralization,
+               cross-area AI and automation adoption
+Orchestration  Claude Code, opencode, MCP servers, subagent routing, multi-agent
+               adversarial review, in-house harnessing layer (devsource)
+Method         TDD, Red-Green-Refactor, OpenSpec, spec-driven development, contracts first
+Intelligence   GitNexus cross-repo graph, CodeGraph per-repo index, Engram team memory
+               on a self-hosted sync server
+Languages      TypeScript, JavaScript, Node.js, Python, PHP, Bash
+Interfaces     React, Vite, Next.js, React Native, Tailwind
+Services       FastAPI, Flask, Pydantic, Express, Laravel
+Data           PostgreSQL, MySQL, DynamoDB, Athena, medallion data lakes
+Cloud          AWS Lambda / S3 / DynamoDB / Athena / IAM, Serverless, Docker, GitHub Actions
+Quality        Vitest, Jest, Playwright, DORA metrics, chaos testing, data-quality reporting
+Domain         Freight forwarding, retail streaming, internal platforms, integrations
 ```
 
 ## § `engineering_principles`
@@ -56,8 +79,9 @@ Domain       Freight forwarding, retail streaming, internal platforms, integrati
 1. Prefer clear boundaries over clever abstractions.
 2. Treat APIs and integrations as contracts.
 3. An agent is only as reliable as its context — govern the inputs, review the outputs.
-4. Adopt on evidence, not on novelty. Measure the cost before committing to the tool.
-5. Automate the boring parts, keep the important parts explicit.
+4. Know the fundamentals well enough to tell when the agent is wrong.
+5. Adopt on evidence, not on novelty. Measure the cost before committing to the tool.
+6. Automate the boring parts, keep the important parts explicit.
 ```
 
 ## ∿ `signals`
@@ -138,6 +162,12 @@ That is not a tooling upgrade, it changes what the job is. The hard part was nev
 model to write code — it is making the leverage trustworthy: context that is governed, agent
 output that is auditable, data the organization can actually decide with, and a number at the
 end that says whether the work mattered.
+
+It also moved what depth means. Fundamentals still decide everything, because they are how you
+catch a wrong answer; memorizing a framework's surface does not, because that is the part the
+agent already covers. So the scarce work shifted to reading a business need, choosing the stack
+that fits it on both technical and commercial grounds, and getting people to adopt the change.
+Languages became an implementation detail rather than the qualification.
 
 So what I am building toward is turning that into a discipline instead of a craft — standards,
 guardrails, enablement — so the practice survives being handed to someone else. Right now it is
