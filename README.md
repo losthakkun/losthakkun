@@ -37,7 +37,7 @@ Before the agents: native modules, device fleets, streaming platforms, IT and ha
 The unglamorous half of technology innovation is the half that teaches you what breaks.
 ```
 
-## ▤ `stack`
+## ≡ `stack`
 
 ```txt
 Agentic      Claude Code, MCP servers, multi-agent adversarial review, in-house harnessing
@@ -60,7 +60,7 @@ Domain       Freight forwarding, retail streaming, internal platforms, integrati
 5. Automate the boring parts, keep the important parts explicit.
 ```
 
-## ◧ `signals`
+## ∿ `signals`
 
 Generated daily from WakaTime and the GitHub API. They measure output and delivery, not hours
 in an editor, and nothing here is typed in by hand — which also means they only publish what
@@ -101,7 +101,7 @@ pace — since 2019-05-24
 _Updated 2026-08-24 03:20 UTC_
 <!--END_SECTION:agent-impact-->
 
-## ◐ `where_the_time_goes`
+## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
 📊 **This Week I Spent My Time On** 
