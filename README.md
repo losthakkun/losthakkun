@@ -11,23 +11,24 @@ WEPORT (Radiant Logistics) · Mexico City · Spanish / English
   agents                                        └─ build ────┘
 ```
 
-Ten years of shipping software, now spent on the part that is actually hard: making agent
-leverage trustworthy. I own the contracts and the review, agents execute inside them, and
-nothing counts as done until a number says it mattered. The scope runs past the codebase —
-IT infrastructure, security and governance, and getting areas outside engineering onto AI
-and automation.
+Ten years shipping software. Most of my attention now goes to making agent output something
+you can trust: I own the contracts and the review, agents work inside them, and a change isn't
+done until there's a number showing it moved something.
+
+The work also goes past the codebase. IT infrastructure, security and governance, and helping
+teams outside engineering pick up AI and automation.
 
 ## ◆ `current_scope`
 
 ```txt
-+ Owning initiatives end to end — discovery, MVP scope, build, deploy, adoption
++ Owning initiatives end to end: discovery, MVP scope, build, deploy, adoption
 + Choosing the stack per project against technical and commercial constraints
 + Designing agentic workflows governed by TDD, OpenSpec and adversarial review
 + Building the harnessing layer that keeps agent context governed and reproducible
-+ Tuning AI economics — token cost measured against delivered capacity
-+ Improving IT infrastructure alongside product — security, governance, centralization
-+ Bringing other areas and stakeholders onto AI and automation, not only engineering
-+ Driving adoption and enablement from C-level to operators, new hires and vendors
++ Tuning AI economics, measuring token cost against delivered capacity
++ Improving IT infrastructure alongside product: security, governance, centralization
++ Bringing other areas and stakeholders onto AI and automation
++ Driving adoption from C-level to operators, new hires and vendors
 ```
 
 ## ◇ `track`
@@ -38,19 +39,20 @@ and automation.
 2016 · 2022   VOXPOP                        Full-stack · AndroidTV, React Native, AWS
 2018 · now    Independent                   React / React Native consulting
 
-Native modules, device fleets, streaming platforms, hardware, IT operations. Not a closed
-chapter — infrastructure is still part of the scope, and the unglamorous half of technology
-innovation is the half that teaches you what breaks.
+Native modules, device fleets, streaming platforms, hardware, IT operations. Infrastructure
+is still part of the job. Most of what I know about how systems fail, I learned there.
 ```
 
 ## ≡ `stack`
 
-Fundamentals are the part that transfers. Data structures, concurrency, protocols, how a system
-behaves under load — those hold across every language below, and they are how I can tell when an
-agent's answer is wrong. Memorizing a framework's surface stopped being the bottleneck; what is
-scarce now is deciding which stack actually fits a problem, technically and commercially, and
-getting an organization to adopt the change. So the list is what the work currently runs on, not
-a claim to mastery of all of it.
+Fundamentals are the part that carries over. Data structures, concurrency, protocols, how a
+system behaves under load. They hold across every language on this list, and they're what let
+me spot a wrong answer from an agent.
+
+Memorizing a framework's surface stopped being the hard part. The hard part now is picking the
+stack that fits a problem on technical and commercial grounds, then getting an organization to
+move to it. What follows is what the work runs on today. I've gone deeper in some of it than
+in the rest.
 
 ```txt
 Foundations    Data structures, concurrency, protocols, system design, debugging from
@@ -78,7 +80,7 @@ Domain         Freight forwarding, retail streaming, internal platforms, integra
 ```txt
 1. Prefer clear boundaries over clever abstractions.
 2. Treat APIs and integrations as contracts.
-3. An agent is only as reliable as its context — govern the inputs, review the outputs.
+3. An agent is only as reliable as its context. Govern the inputs, review the outputs.
 4. Know the fundamentals well enough to tell when the agent is wrong.
 5. Adopt on evidence, not on novelty. Measure the cost before committing to the tool.
 6. Automate the boring parts, keep the important parts explicit.
@@ -86,9 +88,9 @@ Domain         Freight forwarding, retail streaming, internal platforms, integra
 
 ## ∿ `signals`
 
-Generated daily from WakaTime and the GitHub API. They measure output and delivery, not hours
-in an editor, and nothing here is typed in by hand — which also means they only publish what
-those APIs can actually see. A metric that would need a caveat to be true is left out instead.
+Generated daily from WakaTime and the GitHub API, so nothing here is typed in by hand. That
+also limits them to what those APIs can see. When a metric needs a caveat to be true, I leave
+it out.
 
 <!--START_SECTION:agent-impact-->
 ```txt
@@ -153,29 +155,29 @@ Linux                    15 hrs 36 mins      🟦🟦🟦🟦🟦🟦🟦🟦�
 
 ## ∎ `thesis`
 
-The split between developer, product manager and QA is dissolving. What replaces it is the
-product engineer as the base unit: one person carrying a business need from discovery to a
-measured outcome, with agents executing the mechanical work inside contracts a human owns.
-Teams get smaller and their scope gets wider.
+The split between developer, product manager and QA is dissolving. The product engineer becomes
+the base unit: one person carries a business need from discovery through to a measured outcome,
+with agents doing the mechanical work inside contracts a human owns. Teams get smaller and
+their scope gets wider.
 
-That is not a tooling upgrade, it changes what the job is. The hard part was never getting a
-model to write code — it is making the leverage trustworthy: context that is governed, agent
-output that is auditable, data the organization can actually decide with, and a number at the
-end that says whether the work mattered.
+This changes the job itself. Getting a model to write code turned out to be the easy part. The
+work is in making that leverage trustworthy: context you govern, output you can audit, data the
+organization can decide with, and a number at the end that shows whether any of it mattered.
 
-It also moved what depth means. Fundamentals still decide everything, because they are how you
-catch a wrong answer; memorizing a framework's surface does not, because that is the part the
-agent already covers. So the scarce work shifted to reading a business need, choosing the stack
-that fits it on both technical and commercial grounds, and getting people to adopt the change.
-Languages became an implementation detail rather than the qualification.
+It moved what depth means, too. Fundamentals still decide outcomes, because they're how you
+catch a wrong answer. Framework trivia doesn't, because that's the part the agent covers. The
+scarce skills are reading a business need, picking a stack that fits it commercially as well as
+technically, and getting people to adopt the change. Language choice is an implementation
+detail now.
 
-So what I am building toward is turning that into a discipline instead of a craft — standards,
-guardrails, enablement — so the practice survives being handed to someone else. Right now it is
-mostly folklore passed between people who happened to figure it out.
+What I'm working toward is turning this into a discipline. Standards, guardrails, enablement,
+so the practice survives being handed to someone else. Right now it's mostly folklore, passed
+between people who happened to figure it out.
 
-Two things I do not buy. **Autonomy without governance:** broad access with no contracts,
-acceptance criteria or audit trail is velocity you cannot trace. And **metrics theater:** this
-README dropped its own lead-time metric because the number was accurate and measured nothing.
+Two things I don't buy. **Autonomy without governance:** broad access with no contracts,
+acceptance criteria or audit trail gives you speed you can't trace. And **metrics theater:**
+I removed a lead-time metric from this page because the number was accurate and measured
+nothing.
 
 <!--
 losthakkun/losthakkun is a special repository because its README.md
