@@ -121,11 +121,29 @@ Linux                    15 hrs 36 mins      🟦🟦🟦🟦🟦🟦🟦🟦�
  Last Updated on 24/08/2026 02:52:53 UTC
 <!--END_SECTION:waka-->
 
-## `notes`
+## `thesis`
 
 ```txt
-Interested in product engineering, agentic AI systems, developer leverage,
-data platforms, and logistics technology.
+The split between developer, product manager and QA is dissolving. What
+replaces it is the product engineer as the base unit: one person carrying a
+business need from discovery to a measured outcome, with agents executing the
+mechanical work inside contracts a human owns. Teams get smaller and their
+scope gets wider.
+
+That is not a tooling upgrade, it changes what the job is. The hard part was
+never getting a model to write code — it is making the leverage trustworthy:
+context that is governed, agent output that is auditable, data the
+organization can actually decide with, and a number at the end that says
+whether the work mattered.
+
+So what I am building toward is turning that into a discipline instead of a
+craft: standards, guardrails and enablement, so the practice survives being
+handed to someone else.
+
+Two things I do not buy. Autonomy without governance — broad access with no
+contracts, acceptance criteria or audit trail is velocity you cannot trace.
+And metrics theater: this README dropped its own lead-time metric because the
+number was accurate and measured nothing.
 ```
 
 <!--
