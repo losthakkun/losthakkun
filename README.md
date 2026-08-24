@@ -3,39 +3,44 @@
 ```ts
 const asarel = {
   name: "Asarel Alejandro Núñez Segoviano",
-  role: "Full Stack Developer",
-  company: "WEPORT",
+  role: "Lead Software Engineer · Product Engineering",
+  company: "WEPORT (Radiant Logistics)",
   location: "Mexico City, Mexico",
   education: "Universidad Tecnológica de México",
   focus: [
-    "Full-stack platforms",
-    "Architecture and maintainability",
-    "Automation and developer workflows",
-    "Integrations and logistics tech"
+    "End-to-end product ownership",
+    "Agentic engineering workflows",
+    "AI governance and context harnessing",
+    "Data platforms and decision visibility"
   ]
 };
 ```
 
-I build software with a product mindset and an architecture-first approach.
-Most of my work lives where frontend, backend, integrations, and operations need to stay aligned.
+I lead an engineering team through the shift from conventional development to agentic engineering.
+My work sits where product decisions, system architecture, and AI leverage meet: I own the
+contracts and the review, agents execute inside them, and the result is measured against
+business outcomes rather than output volume.
 
 ## `current_scope`
 
 ```txt
-+ Designing maintainable full-stack systems
-+ Automating repetitive engineering work
-+ Building integration-heavy products with clear contracts
-+ Improving delivery quality through tooling and workflow design
++ Owning initiatives end to end — discovery, MVP scope, build, deploy, adoption
++ Designing agentic workflows governed by TDD, OpenSpec and adversarial review
++ Building the harnessing layer that keeps agent context governed and reproducible
++ Tuning AI economics — token cost measured against delivered capacity
++ Driving technology adoption from C-level to operators
 ```
 
 ## `stack`
 
 ```txt
-Frontend     React, Next.js, TypeScript, Tailwind
-Backend      Node.js, PHP, Python, Laravel, Express
-Data         MySQL, PostgreSQL, MongoDB, DynamoDB
-Cloud        AWS, Serverless, GitHub Actions
-Domain       Integrations, internal platforms, logistics operations
+Agentic      Claude Code, MCP servers, multi-agent review, in-house harnessing layer
+Languages    TypeScript, JavaScript, Node.js, Python, PHP, Bash
+Interfaces   React, Vite, Next.js, React Native, Tailwind
+Backend      Node.js, Express, Laravel, Python APIs
+Data         PostgreSQL, MySQL, MongoDB, DynamoDB, medallion data lakes
+Cloud        AWS, Serverless, Docker, GitHub Actions
+Domain       Freight forwarding, internal platforms, integrations
 ```
 
 ## `engineering_principles`
@@ -43,8 +48,9 @@ Domain       Integrations, internal platforms, logistics operations
 ```txt
 1. Prefer clear boundaries over clever abstractions.
 2. Treat APIs and integrations as contracts.
-3. Automate the boring parts, keep the important parts explicit.
-4. Optimize for maintainability, not short-term novelty.
+3. An agent is only as reliable as its context — govern the inputs, review the outputs.
+4. Adopt on evidence, not on novelty. Measure the cost before committing to the tool.
+5. Automate the boring parts, keep the important parts explicit.
 ```
 
 ## `how_i_work`
@@ -53,6 +59,7 @@ Domain       Integrations, internal platforms, logistics operations
 I work agent-first: I own the architecture, the contracts, and the review;
 agents execute the mechanical work under those constraints.
 The metrics below measure output and delivery, not hours in an editor.
+They are generated daily from WakaTime and the GitHub API — nothing here is self-reported.
 ```
 
 <!--START_SECTION:agent-impact-->
@@ -91,19 +98,19 @@ _Updated 2026-08-23 06:19 UTC_
 
 ```text
 💬 Programming Languages: 
-PHP                      6 hrs 7 mins        ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   39.26 % 
-Other                    4 hrs 3 mins        ⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   26.06 % 
-HTML                     2 hrs 42 mins       ⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   17.35 % 
-Bash                     1 hr 5 mins         ⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   07.01 % 
-Python                   28 mins             ⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   03.01 % 
+PHP                      6 hrs 7 mins        🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   39.26 % 
+Other                    4 hrs 3 mins        🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   26.06 % 
+HTML                     2 hrs 42 mins       🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   17.35 % 
+Bash                     1 hr 5 mins         🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   07.01 % 
+Python                   28 mins             🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   03.01 % 
 
 🔥 Editors: 
-Claude Code              14 hrs 50 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜   95.11 % 
-VS Code                  40 mins             ⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   04.30 % 
-Opencode Cli             5 mins              ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   00.60 % 
+Claude Code              14 hrs 50 mins      🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛   95.11 % 
+VS Code                  40 mins             🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   04.30 % 
+Opencode Cli             5 mins              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   00.60 % 
 
 💻 Operating System: 
-Linux                    15 hrs 36 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
+Linux                    15 hrs 36 mins      🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦   100.00 % 
 ```
 
 
@@ -113,8 +120,8 @@ Linux                    15 hrs 36 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛�
 ## `notes`
 
 ```txt
-Interested in full-stack engineering, software architecture,
-automation, integrations, and logistics technology.
+Interested in product engineering, agentic AI systems, developer leverage,
+data platforms, and logistics technology.
 ```
 
 <!--
