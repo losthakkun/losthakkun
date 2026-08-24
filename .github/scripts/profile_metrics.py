@@ -161,17 +161,12 @@ def render_agent_workflow(waka: dict[str, Any]) -> list[tuple[str, str]]:
     if additions or deletions:
         rows.append(("lines_generated", f"+{additions:,} / -{deletions:,}"))
 
-    # WakaTime attributes line changes to the model the editor reports, which is
-    # the orchestrating loop. Work delegated to subagents — deliberately routed
-    # to cheaper or faster models per task — is not broken out, so an unqualified
-    # mix reads as "one model for everything" and understates the routing. The
-    # suffix keeps the number honest about what it covers.
-    line_changes = waka.get("ai_model_line_changes", {})
-    total_lines = sum(line_changes.values())
-    if total_lines:
-        ranked = sorted(line_changes.items(), key=lambda item: item[1], reverse=True)
-        mix = " · ".join(f"{name} {value / total_lines * 100:.0f}%" for name, value in ranked if value / total_lines >= 0.01)
-        rows.append(("model_mix", f"{mix} · main loop only"))
+    # ai_model_line_changes is deliberately not published. WakaTime attributes
+    # line changes to the model the editor reports, which is the orchestrating
+    # loop, so subagent routing never appears and the mix always reads as one
+    # model for everything. The real breakdown lives in the local Claude Code
+    # transcripts, which carry both `message.model` and the `isSidechain` flag
+    # that separates delegated work — it needs a source this job cannot reach.
 
     tokens_in = waka.get("ai_input_tokens", 0)
     tokens_out = waka.get("ai_output_tokens", 0)

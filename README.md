@@ -63,10 +63,8 @@ Domain       Freight forwarding, retail streaming, internal platforms, integrati
 ## `signals`
 
 Generated daily from WakaTime and the GitHub API. They measure output and delivery, not hours
-in an editor, and nothing here is typed in by hand — which also means they inherit the limits
-of what those APIs can see. Model attribution covers the orchestrating loop only: work routed
-to subagents on cheaper or faster models is not broken out, so the mix reads narrower than the
-fleet actually is.
+in an editor, and nothing here is typed in by hand — which also means they only publish what
+those APIs can actually see. A metric that would need a caveat to be true is left out instead.
 
 <!--START_SECTION:agent-impact-->
 ```txt

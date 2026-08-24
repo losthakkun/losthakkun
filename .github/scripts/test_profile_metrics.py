@@ -197,10 +197,9 @@ WAKA = {
     "ai_output_tokens": 1_000_000,
     "languages": [{"name": "PHP", "total_seconds": 3600 * 6}],
 }
-agent_rows = dict(pm.render_agent_workflow({**WAKA, "ai_model_line_changes": {"Opus": 9000, "Haiku": 1000}}))
 check(
-    agent_rows["model_mix"] == "Opus 90% · Haiku 10% · main loop only",
-    "the model mix says which layer it measures, since subagent routing is not attributed",
+    "model_mix" not in dict(pm.render_agent_workflow({**WAKA, "ai_model_line_changes": {"Opus": 9000, "Haiku": 1000}})),
+    "the WakaTime model mix is not published: it cannot see subagent routing",
 )
 
 agent_rows = dict(pm.render_agent_workflow(WAKA))
