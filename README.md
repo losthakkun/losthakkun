@@ -1,4 +1,4 @@
-## `whoami`
+## ❯ `whoami`
 
 ```txt
 Asarel Alejandro Núñez Segoviano
@@ -15,7 +15,7 @@ Ten years of shipping software, now spent on the part that is actually hard: mak
 leverage trustworthy. I own the contracts and the review, agents execute inside them, and
 nothing counts as done until a number says it mattered.
 
-## `current_scope`
+## ◆ `current_scope`
 
 ```txt
 + Owning initiatives end to end — discovery, MVP scope, build, deploy, adoption
@@ -25,7 +25,7 @@ nothing counts as done until a number says it mattered.
 + Driving adoption and enablement from C-level to operators, new hires and vendors
 ```
 
-## `track`
+## ◇ `track`
 
 ```txt
 2025 · now    WEPORT / Radiant Logistics    Lead Software Engineer · freight forwarding
@@ -37,7 +37,7 @@ Before the agents: native modules, device fleets, streaming platforms, IT and ha
 The unglamorous half of technology innovation is the half that teaches you what breaks.
 ```
 
-## `stack`
+## ▤ `stack`
 
 ```txt
 Agentic      Claude Code, MCP servers, multi-agent adversarial review, in-house harnessing
@@ -50,7 +50,7 @@ Cloud        AWS, Serverless, Docker, GitHub Actions
 Domain       Freight forwarding, retail streaming, internal platforms, integrations
 ```
 
-## `engineering_principles`
+## § `engineering_principles`
 
 ```txt
 1. Prefer clear boundaries over clever abstractions.
@@ -60,7 +60,7 @@ Domain       Freight forwarding, retail streaming, internal platforms, integrati
 5. Automate the boring parts, keep the important parts explicit.
 ```
 
-## `signals`
+## ◧ `signals`
 
 Generated daily from WakaTime and the GitHub API. They measure output and delivery, not hours
 in an editor, and nothing here is typed in by hand — which also means they only publish what
@@ -101,7 +101,7 @@ pace — since 2019-05-24
 _Updated 2026-08-24 03:20 UTC_
 <!--END_SECTION:agent-impact-->
 
-## `where_the_time_goes`
+## ◐ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
 📊 **This Week I Spent My Time On** 
@@ -127,7 +127,7 @@ Linux                    15 hrs 36 mins      🟦🟦🟦🟦🟦🟦🟦🟦�
  Last Updated on 24/08/2026 03:20:27 UTC
 <!--END_SECTION:waka-->
 
-## `thesis`
+## ∎ `thesis`
 
 The split between developer, product manager and QA is dissolving. What replaces it is the
 product engineer as the base unit: one person carrying a business need from discovery to a
