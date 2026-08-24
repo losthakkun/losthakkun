@@ -197,6 +197,12 @@ WAKA = {
     "ai_output_tokens": 1_000_000,
     "languages": [{"name": "PHP", "total_seconds": 3600 * 6}],
 }
+agent_rows = dict(pm.render_agent_workflow({**WAKA, "ai_model_line_changes": {"Opus": 9000, "Haiku": 1000}}))
+check(
+    agent_rows["model_mix"] == "Opus 90% · Haiku 10% · main loop only",
+    "the model mix says which layer it measures, since subagent routing is not attributed",
+)
+
 agent_rows = dict(pm.render_agent_workflow(WAKA))
 check(agent_rows["leverage"] == "1,000 lines per agent hour · 100 lines per prompt", "leverage divides lines by agent hours and prompts")
 check(agent_rows["context_cost"] == "500 tokens in per generated line", "context cost divides input tokens by generated lines")
