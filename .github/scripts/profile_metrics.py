@@ -117,19 +117,24 @@ def parse_timestamp(stamp: str) -> datetime:
     return datetime.strptime(stamp, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
 
 
-def fetch_wakatime(api_key: str, stats_range: str = "last_7_days") -> dict[str, Any]:
+def fetch_wakatime(
+    api_key: str, stats_range: str = "last_7_days", require_breakdown: bool = True
+) -> dict[str, Any]:
     """Read a stats aggregate.
 
     WakaTime builds these aggregates lazily: the first request after new
     heartbeats can answer without the breakdown lists. Retrying once returns
     the computed object, which is why the workflow also warms this endpoint up.
+
+    Set require_breakdown=False for ranges read only for their totals, so a
+    response with no per-language list does not cost a pointless second request.
     """
     auth = base64.b64encode(api_key.encode()).decode()
     headers = {"Authorization": f"Basic {auth}"}
     url = WAKATIME_STATS.format(range=stats_range)
     for _ in range(2):
         data = get_json(url, headers).get("data", {})
-        if data.get("languages"):
+        if not require_breakdown or data.get("languages"):
             return data
     return data
 
@@ -215,6 +220,77 @@ def render_flow(prs: list[dict[str, Any]]) -> list[tuple[str, str]]:
     return [("pr_size", f"median {median(sizes):,.0f} lines per merged PR")]
 
 
+def local_dates(timestamps: list[str], tz_name: str) -> set:
+    try:
+        tz = ZoneInfo(tz_name)
+    except (ZoneInfoNotFoundError, ValueError):
+        tz = timezone.utc
+    return {parse_timestamp(stamp).astimezone(tz).date() for stamp in timestamps}
+
+
+def longest_streak(timestamps: list[str], tz_name: str) -> int:
+    """Longest run of consecutive local days carrying a commit.
+
+    active_days counts how many days had work; this says whether they were
+    contiguous. Twenty-four scattered days and twenty-four in a row are the
+    same count and a different working pattern.
+    """
+    dates = sorted(local_dates(timestamps, tz_name))
+    if not dates:
+        return 0
+    best = run = 1
+    for previous, current in zip(dates, dates[1:]):
+        run = run + 1 if (current - previous).days == 1 else 1
+        best = max(best, run)
+    return best
+
+
+def render_pace(
+    all_time: dict[str, Any], month: dict[str, Any], days: int, today: Any = None
+) -> tuple[str, list[str]]:
+    """Total tracked time, anchored to the day tracking started.
+
+    An all-time total with no window is the number this file used to publish as
+    a bare badge: four digits and no way to judge them. Both the header and the
+    rows name their span, and the group is dropped entirely when WakaTime does
+    not report a start date — an unanchored total is worse than no total.
+
+    `today` is injectable so the span assertion in the tests does not go stale
+    with the calendar.
+    """
+    total_seconds = all_time.get("total_seconds") or 0
+    # On a stats aggregate `range` is the range name as a string; on other
+    # endpoints it is an object carrying the dates. Accept either, and treat a
+    # missing anchor as a reason not to publish.
+    range_field = all_time.get("range")
+    start = range_field.get("start") if isinstance(range_field, dict) else None
+    start = start or all_time.get("start")
+    if not total_seconds or not start:
+        return "", []
+
+    start_date = str(start)[:10]
+    reference = today or datetime.now(timezone.utc).date()
+    try:
+        span_days = (reference - datetime.strptime(start_date, "%Y-%m-%d").date()).days
+    except ValueError:
+        return "", []
+    if span_days <= 0:
+        return "", []
+
+    years = span_days / 365.25
+    span = f"{years:.1f} years" if years >= 1 else f"{span_days} days"
+    rows = [("tracked_total", f"{compact_duration(total_seconds)} across {span}")]
+
+    month_seconds = month.get("total_seconds") or 0
+    if month_seconds:
+        per_week = month_seconds / (days / 7)
+        rows.append(
+            ("last_30_days", f"{compact_duration(month_seconds)} ({compact_duration(per_week)} per week)")
+        )
+
+    return f"pace — since {start_date}", format_rows(rows)
+
+
 def active_days_row(timestamps: list[str], tz_name: str, days: int) -> tuple[str, str] | None:
     """Distinct local days carrying at least one commit.
 
@@ -223,12 +299,7 @@ def active_days_row(timestamps: list[str], tz_name: str, days: int) -> tuple[str
     """
     if not timestamps:
         return None
-    try:
-        tz = ZoneInfo(tz_name)
-    except (ZoneInfoNotFoundError, ValueError):
-        tz = timezone.utc
-    unique = {parse_timestamp(stamp).astimezone(tz).date() for stamp in timestamps}
-    return ("active_days", f"{len(unique)} of {days} days")
+    return ("active_days", f"{len(local_dates(timestamps, tz_name))} of {days} days")
 
 
 def search_count(token: str, query: str) -> int:
@@ -544,6 +615,7 @@ def build_block(
     delivery: list[tuple[str, str]],
     rhythm: list[str],
     time_split: list[str],
+    pace: tuple[str, list[str]],
     tz_name: str,
 ) -> str:
     lines = ["```txt", "agent_workflow — last 7 days"]
@@ -556,6 +628,10 @@ def build_block(
     if rhythm:
         lines += ["", f"commit_rhythm — last {DELIVERY_WINDOW_DAYS} days · {tz_name}"]
         lines += rhythm
+    pace_header, pace_rows = pace
+    if pace_rows:
+        lines += ["", pace_header]
+        lines += pace_rows
     lines += ["```", "", f"_Updated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_"]
     return "\n".join(lines)
 
@@ -580,7 +656,7 @@ def write_block(block: str) -> bool:
     return True
 
 
-def build_time_split(wakatime_key: str, tz_name: str) -> list[str]:
+def build_time_split(waka_month: dict[str, Any], tz_name: str) -> list[str]:
     """Render the activity split, or nothing at all when the calendar is not wired up.
 
     A missing calendar credential is a normal state, not a failure: the rest of
@@ -607,7 +683,6 @@ def build_time_split(wakatime_key: str, tz_name: str) -> list[str]:
         return []
 
     try:
-        waka_month = fetch_wakatime(wakatime_key, "last_30_days")
         token = calendar_time.access_token(client_id, client_secret, refresh_token, post_form)
         now = datetime.now(ZoneInfo(tz_name) if tz_name else timezone.utc)
         events = calendar_time.fetch_events(token, calendar, DELIVERY_WINDOW_DAYS, get_json, now)
@@ -642,11 +717,25 @@ def main() -> int:
     cadence = active_days_row(timestamps, tz_name, DELIVERY_WINDOW_DAYS)
     if cadence:
         delivery.append(cadence)
+    streak = longest_streak(timestamps, tz_name)
+    if streak > 1:
+        delivery.append(("streak", f"{streak} consecutive days"))
 
     rhythm = render_commit_rhythm(timestamps, tz_name)
-    time_split = build_time_split(wakatime_key, tz_name)
 
-    block = build_block(waka, delivery, rhythm, time_split, tz_name)
+    # Fetched once here and handed to both consumers: pace always needs the
+    # 30-day aggregate, and time_split needs the same one when it is enabled.
+    try:
+        month = fetch_wakatime(wakatime_key, "last_30_days")
+        all_time = fetch_wakatime(wakatime_key, "all_time", require_breakdown=False)
+    except urllib.error.HTTPError as error:
+        print(f"wakatime range request failed: {error}", file=sys.stderr)
+        month, all_time = {}, {}
+
+    time_split = build_time_split(month, tz_name)
+    pace = render_pace(all_time, month, DELIVERY_WINDOW_DAYS)
+
+    block = build_block(waka, delivery, rhythm, time_split, pace, tz_name)
 
     if "--dry-run" in sys.argv:
         print(block)

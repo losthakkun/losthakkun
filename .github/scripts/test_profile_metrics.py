@@ -147,13 +147,13 @@ check(
 
 for value in ("", "0", "false", "no"):
     os.environ["PUBLISH_TIME_SPLIT"] = value
-    check(pm.build_time_split("irrelevant", TZ) == [], f"time_split stays unpublished for {value!r}")
+    check(pm.build_time_split({}, TZ) == [], f"time_split stays unpublished for {value!r}")
 os.environ["PUBLISH_TIME_SPLIT"] = "true"
 os.environ.pop("GOOGLE_CLIENT_ID", None)
 os.environ.pop("GOOGLE_CLIENT_SECRET", None)
 os.environ.pop("GOOGLE_REFRESH_TOKEN", None)
 check(
-    pm.build_time_split("irrelevant", TZ) == [],
+    pm.build_time_split({}, TZ) == [],
     "an enabled gate without credentials still degrades instead of failing",
 )
 os.environ.pop("PUBLISH_TIME_SPLIT", None)
@@ -237,6 +237,51 @@ check(
     "two commits on the same local day count once",
 )
 check(pm.active_days_row([], TZ, 30) is None, "no commits renders no active_days row")
+
+# --- streak ---------------------------------------------------------------
+
+RUN = ["2026-08-0%dT18:00:00Z" % d for d in (1, 2, 3, 7, 8)]
+check(pm.longest_streak(RUN, TZ) == 3, "the streak is the longest consecutive run, not the total")
+check(pm.longest_streak(["2026-08-01T18:00:00Z"], TZ) == 1, "a single day is a run of one")
+check(pm.longest_streak([], TZ) == 0, "no commits is no streak")
+check(
+    pm.longest_streak(["2026-08-01T18:00:00Z", "2026-08-01T19:00:00Z"], TZ) == 1,
+    "two commits on one local day do not make a run of two",
+)
+
+# --- pace -----------------------------------------------------------------
+# An all-time total is only meaningful next to the day tracking started, so the
+# group is dropped rather than published unanchored.
+
+from datetime import date  # noqa: E402
+
+ALL_TIME = {"total_seconds": 3600 * 2257 + 60 * 19, "start": "2024-03-11T00:00:00Z", "range": "all_time"}
+MONTH = {"total_seconds": 3600 * 96}
+NOW = date(2026, 8, 24)  # pinned: a span assertion must not go stale with the calendar
+
+header, rows = pm.render_pace(ALL_TIME, MONTH, 30, NOW)
+check(header == "pace — since 2024-03-11", "the group header carries the anchor date")
+check(any("2257h 19m across 2.5 years" in row for row in rows), "the total states the span it covers")
+check(any("96h 00m (22h 24m per week)" in row for row in rows), "the 30-day window reports its own weekly rate")
+check(
+    any("120 days" in row for row in pm.render_pace(ALL_TIME, {}, 30, date(2024, 7, 9))[1]),
+    "a span under a year is reported in days rather than a fraction",
+)
+check(pm.render_pace({"total_seconds": 100}, MONTH, 30, NOW) == ("", []), "no anchor means no pace group")
+check(pm.render_pace({}, MONTH, 30, NOW) == ("", []), "no total means no pace group")
+check(
+    pm.render_pace({"total_seconds": 100, "range": {"start": "2024-03-11"}}, {}, 30, NOW)[0]
+    == "pace — since 2024-03-11",
+    "an anchor nested under a range object is accepted too",
+)
+check(
+    pm.render_pace(ALL_TIME, {}, 30, date(2024, 3, 10)) == ("", []),
+    "an anchor in the future is not a span, so nothing is published",
+)
+check(
+    len(pm.render_pace(ALL_TIME, {}, 30, NOW)[1]) == 1,
+    "the 30-day row is omitted when that aggregate is missing",
+)
 
 # --- waka bar recolor -----------------------------------------------------
 # The upstream action only offers █░, ⣿⣀ and ⬛⬜. On a dark theme its ⬜ empty

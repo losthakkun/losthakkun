@@ -38,7 +38,10 @@ jobs:
           SECTION_NAME: waka
           COMMIT_MESSAGE: "docs(profile): update WakaTime stats"
           SHOW_TIMEZONE: false
-          SHOW_TOTAL_CODE_TIME: true
+          # The badge prints an all-time total with no window attached, which
+          # reads as an unexplained four-digit number. profile_metrics.py
+          # renders the same figure anchored to the date tracking started.
+          SHOW_TOTAL_CODE_TIME: false
           SHOW_PROFILE_VIEWS: false
           SHOW_SHORT_INFO: false
           SHOW_LOC_CHART: false
