@@ -95,36 +95,36 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions         33 sessions · 187 prompts · 1.36k chars per prompt
-  agent_time       19h 48m (98.86% of tracked time)
-  lines_generated  +18,346 / -71
-  context_moved    15.35M tokens in · 2.33M tokens out
-  leverage         926 lines per agent hour · 98 lines per prompt
-  context_cost     837 tokens in per generated line
-  top_surfaces     PHP 6h 07m · Other 5h 11m · HTML 4h 36m · Bash 1h 17m
+  sessions         35 sessions · 261 prompts · 1.59k chars per prompt
+  agent_time       24h 18m (99.64% of tracked time)
+  lines_generated  +23,890 / -126
+  context_moved    17.28M tokens in · 3.36M tokens out
+  leverage         983 lines per agent hour · 92 lines per prompt
+  context_cost     723 tokens in per generated line
+  top_surfaces     PHP 7h 27m · Other 6h 07m · HTML 5h 19m · Markdown 1h 44m
 
 delivery — last 30 days
-  prs_opened     162
-  prs_merged     153 (94% of opened)
-  pr_size        median 268 lines per merged PR
-  lines_shipped  +87,213 / -6,969
+  prs_opened     170
+  prs_merged     158 (93% of opened)
+  pr_size        median 271 lines per merged PR
+  lines_shipped  +90,720 / -7,024
   active_repos   10
-  contributions  527 (private included)
-  active_days    24 of 30 days
-  streak         12 consecutive days
+  contributions  543 (private included)
+  active_days    25 of 30 days
+  streak         13 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12   53 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  15.9%
-  daytime  12-18  224 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛  67.3%
-  evening  18-24   55 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  16.5%
+  morning  06-12   57 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  16.8%
+  daytime  12-18  227 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛  66.8%
+  evening  18-24   55 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  16.2%
   night    00-06    1 commit   ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   0.3%
 
 pace — since 2019-05-24
-  tracked_total  2260h 39m across 7.3 years
-  last_30_days   55h 30m (12h 57m per week)
+  tracked_total  2263h 27m across 7.3 years
+  last_30_days   54h 35m (12h 44m per week)
 ```
 
-_Updated 2026-08-24 06:30 UTC_
+_Updated 2026-08-25 06:22 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
