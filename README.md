@@ -95,21 +95,21 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions         35 sessions · 261 prompts · 1.59k chars per prompt
-  agent_time       24h 18m (99.64% of tracked time)
+  sessions         37 sessions · 267 prompts · 1.56k chars per prompt
+  agent_time       24h 48m (99.64% of tracked time)
   lines_generated  +23,890 / -126
-  context_moved    17.28M tokens in · 3.36M tokens out
-  leverage         983 lines per agent hour · 92 lines per prompt
-  context_cost     723 tokens in per generated line
-  top_surfaces     PHP 7h 27m · Other 6h 07m · HTML 5h 19m · Markdown 1h 44m
+  context_moved    17.49M tokens in · 3.38M tokens out
+  leverage         963 lines per agent hour · 89 lines per prompt
+  context_cost     732 tokens in per generated line
+  top_surfaces     PHP 7h 27m · Other 6h 37m · HTML 5h 19m · Markdown 1h 44m
 
 delivery — last 30 days
-  prs_opened     170
-  prs_merged     158 (93% of opened)
+  prs_opened     168
+  prs_merged     158 (94% of opened)
   pr_size        median 271 lines per merged PR
   lines_shipped  +90,720 / -7,024
   active_repos   10
-  contributions  543 (private included)
+  contributions  540 (private included)
   active_days    25 of 30 days
   streak         13 consecutive days
 
@@ -121,32 +121,32 @@ commit_rhythm — last 30 days · America/Mexico_City
 
 pace — since 2019-05-24
   tracked_total  2263h 27m across 7.3 years
-  last_30_days   54h 35m (12h 44m per week)
+  last_30_days   57h 23m (13h 23m per week)
 ```
 
-_Updated 2026-08-25 06:22 UTC_
+_Updated 2026-08-26 06:24 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
-PHP                      7 hrs 27 mins       ⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   29.95 % 
-Other                    6 hrs 37 mins       ⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   26.62 % 
-HTML                     5 hrs 19 mins       ⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   21.39 % 
-Markdown                 1 hr 44 mins        ⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   06.97 % 
-Bash                     1 hr 30 mins        ⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   06.08 % 
+Programming Languages: 
+PHP                      7 hrs 27 mins       🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   29.95 % 
+Other                    6 hrs 37 mins       🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   26.62 % 
+HTML                     5 hrs 19 mins       🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   21.39 % 
+Markdown                 1 hr 44 mins        🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   06.97 % 
+Bash                     1 hr 30 mins        🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   06.08 % 
 
-🔥 Editors: 
-Claude Code              24 hrs 3 mins       ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜   96.64 % 
-VS Code                  26 mins             ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   01.75 % 
-Opencode Cli             24 mins             ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   01.61 % 
+Editors: 
+Claude Code              24 hrs 3 mins       🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛   96.64 % 
+VS Code                  26 mins             ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   01.75 % 
+Opencode Cli             24 mins             ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   01.61 % 
 
-💻 Operating System: 
-Linux                    24 hrs 53 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
+Operating System: 
+Linux                    24 hrs 53 mins      🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦   100.00 % 
 ```
 
 
