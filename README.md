@@ -95,13 +95,13 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions         30 sessions · 135 prompts · 1.67k chars per prompt
-  agent_time       18h 00m (98.85% of tracked time)
-  lines_generated  +7,859 / -9
-  context_moved    20.48M tokens in · 3.58M tokens out
-  leverage         437 lines per agent hour · 58 lines per prompt
-  context_cost     2,606 tokens in per generated line
-  top_surfaces     PHP 7h 59m · Markdown 7h 06m · JavaScript 1h 11m · Other 0h 48m
+  sessions         21 sessions · 85 prompts · 1.58k chars per prompt
+  agent_time       12h 28m (98.35% of tracked time)
+  lines_generated  +5,840 / -7
+  context_moved    14.54M tokens in · 2.47M tokens out
+  leverage         468 lines per agent hour · 69 lines per prompt
+  context_cost     2,489 tokens in per generated line
+  top_surfaces     PHP 6h 18m · Markdown 4h 32m · JavaScript 1h 03m · Text 0h 13m
 
 delivery — last 30 days
   prs_opened     389
@@ -124,28 +124,28 @@ pace — since 2019-05-24
   last_30_days   103h 01m (24h 02m per week)
 ```
 
-_Updated 2026-09-22 00:34 UTC_
+_Updated 2026-09-22 10:25 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
-PHP                      6 hrs 18 mins       ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   49.72 % 
-Markdown                 4 hrs 32 mins       ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   35.85 % 
-JavaScript               1 hr 3 mins         ⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   08.33 % 
-Text                     13 mins             ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   01.78 % 
-JSON                     9 mins              ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   01.24 % 
+Programming Languages: 
+PHP                      6 hrs 18 mins       🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   49.72 % 
+Markdown                 4 hrs 32 mins       🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   35.85 % 
+JavaScript               1 hr 3 mins         🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   08.33 % 
+Text                     13 mins             ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   01.78 % 
+JSON                     9 mins              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   01.24 % 
 
-🔥 Editors: 
-Claude Code              12 hrs 28 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   98.35 % 
-VS Code                  12 mins             ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   01.65 % 
+Editors: 
+Claude Code              12 hrs 28 mins      🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦   98.35 % 
+VS Code                  12 mins             ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   01.65 % 
 
-💻 Operating System: 
-Linux                    12 hrs 40 mins      ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
+Operating System: 
+Linux                    12 hrs 40 mins      🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦   100.00 % 
 ```
 
 
