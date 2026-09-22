@@ -68,6 +68,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+          # The commit step rebases when the remote moves under it. A shallow
+          # clone can lack the merge base that rebase needs, so fetch the full
+          # history instead.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -92,6 +96,10 @@ jobs:
           GOOGLE_CALENDAR_EMAIL: ${{ secrets.GOOGLE_CALENDAR_EMAIL }}
         run: python .github/scripts/profile_metrics.py
 
+      # The remote can move between this job's checkout and its push: the
+      # waka-readme-stats action commits README.md itself, and a second
+      # concurrent run of this workflow does the same. A bare push turns that
+      # ordinary race into a failed run, so rebase onto the new base and retry.
       - name: Commit metrics
         run: |
           git config user.name "github-actions[bot]"
@@ -102,4 +110,19 @@ jobs:
           fi
           git add README.md
           git commit -m "docs(profile): update agent and delivery metrics"
-          git push
+
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Pushed on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected on attempt ${attempt}; rebasing onto the updated remote."
+            if ! git pull --rebase --autostash origin main; then
+              git rebase --abort || true
+              echo "::error::README.md changed on the remote in a way that conflicts with the generated metrics. Re-run this workflow to render against the new base."
+              exit 1
+            fi
+          done
+
+          echo "::error::Could not push after 3 attempts; the remote kept moving."
+          exit 1
