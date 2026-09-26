@@ -95,28 +95,24 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions         4 sessions · 6 prompts · 1.05k chars per prompt
-  agent_time       0h 55m (81.68% of tracked time)
-  lines_generated  +458 / -4
-  context_moved    1.24M tokens in · 179.16k tokens out
-  context_cost     2,704 tokens in per generated line
-  top_surfaces     PHP 0h 37m · Markdown 0h 16m · Text 0h 12m · Diff 0h 02m
+  sessions      1 sessions · 0 prompts · 0 chars per prompt
+  top_surfaces  Text 0h 12m
 
 delivery — last 30 days
-  prs_opened     393
-  prs_merged     390 (99% of opened)
-  pr_size        median 372 lines per merged PR
-  lines_shipped  +276,864 / -12,701
+  prs_opened     384
+  prs_merged     376 (98% of opened)
+  pr_size        median 369 lines per merged PR
+  lines_shipped  +268,444 / -12,628
   active_repos   10
   reviews_given  5
-  contributions  1,143 (private included)
+  contributions  1,121 (private included)
   active_days    25 of 30 days
-  streak         11 consecutive days
+  streak         12 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  244 commits  🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  33.2%
-  daytime  12-18  391 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛  53.2%
-  evening  18-24   90 commits  🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  12.2%
+  morning  06-12  251 commits  🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  35.1%
+  daytime  12-18  364 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  50.9%
+  evening  18-24   90 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  12.6%
   night    00-06   10 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.4%
 
 pace — since 2019-05-24
@@ -124,22 +120,22 @@ pace — since 2019-05-24
   last_30_days   94h 47m (22h 07m per week)
 ```
 
-_Updated 2026-09-25 10:38 UTC_
+_Updated 2026-09-26 10:22 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
+Programming Languages: 
 Text                     12 mins             ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
 
-🔥 Editors: 
+Editors: 
 VS Code                  12 mins             ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
 
-💻 Operating System: 
+Operating System: 
 Linux                    12 mins             ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
 ```
 
