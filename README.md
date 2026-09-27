@@ -95,47 +95,46 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions      1 sessions · 0 prompts · 0 chars per prompt
-  top_surfaces  Text 0h 12m
+  top_surfaces  Text 0h 02m
 
 delivery — last 30 days
-  prs_opened     384
-  prs_merged     376 (98% of opened)
-  pr_size        median 369 lines per merged PR
-  lines_shipped  +268,444 / -12,628
+  prs_opened     372
+  prs_merged     369 (99% of opened)
+  pr_size        median 370 lines per merged PR
+  lines_shipped  +266,015 / -12,453
   active_repos   10
   reviews_given  5
-  contributions  1,121 (private included)
-  active_days    25 of 30 days
+  contributions  1,082 (private included)
+  active_days    24 of 30 days
   streak         12 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  251 commits  🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  35.1%
-  daytime  12-18  364 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  50.9%
-  evening  18-24   90 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  12.6%
-  night    00-06   10 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.4%
+  morning  06-12  239 commits  🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  34.7%
+  daytime  12-18  350 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  50.8%
+  evening  18-24   90 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  13.1%
+  night    00-06   10 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.5%
 
 pace — since 2019-05-24
   tracked_total  2358h 08m across 7.3 years
-  last_30_days   94h 47m (22h 07m per week)
+  last_30_days   91h 04m (21h 15m per week)
 ```
 
-_Updated 2026-09-26 10:22 UTC_
+_Updated 2026-09-27 10:54 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
+Programming Languages: 
 Text                     2 mins              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
 
-🔥 Editors: 
+Editors: 
 VS Code                  2 mins              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
 
-💻 Operating System: 
+Operating System: 
 Linux                    2 mins              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
 ```
 
