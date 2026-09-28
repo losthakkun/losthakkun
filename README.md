@@ -95,46 +95,46 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  top_surfaces  Text 0h 02m
+  no activity tracked
 
 delivery — last 30 days
-  prs_opened     372
-  prs_merged     369 (99% of opened)
+  prs_opened     362
+  prs_merged     354 (98% of opened)
   pr_size        median 370 lines per merged PR
-  lines_shipped  +266,015 / -12,453
+  lines_shipped  +257,310 / -11,974
   active_repos   10
   reviews_given  5
-  contributions  1,082 (private included)
+  contributions  1,040 (private included)
   active_days    24 of 30 days
   streak         12 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  239 commits  🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  34.7%
-  daytime  12-18  350 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  50.8%
-  evening  18-24   90 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  13.1%
+  morning  06-12  228 commits  🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  34.7%
+  daytime  12-18  330 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  50.2%
+  evening  18-24   90 commits  🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  13.7%
   night    00-06   10 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.5%
 
 pace — since 2019-05-24
   tracked_total  2358h 08m across 7.3 years
-  last_30_days   91h 04m (21h 15m per week)
+  last_30_days   86h 58m (20h 17m per week)
 ```
 
-_Updated 2026-09-27 10:54 UTC_
+_Updated 2026-09-28 12:06 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
+Programming Languages: 
 No Activity Tracked This Week
 
-🔥 Editors: 
+Editors: 
 No Activity Tracked This Week
 
-💻 Operating System: 
+Operating System: 
 No Activity Tracked This Week
 ```
 
