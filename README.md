@@ -98,43 +98,43 @@ agent_workflow — last 7 days
   top_surfaces  Other 0h 00m
 
 delivery — last 30 days
-  prs_opened     497
-  prs_merged     409 (82% of opened)
-  pr_size        median 332 lines per merged PR
-  lines_shipped  +283,784 / -23,304
+  prs_opened     467
+  prs_merged     373 (80% of opened)
+  pr_size        median 330 lines per merged PR
+  lines_shipped  +264,983 / -22,729
   active_repos   15
   reviews_given  5
-  contributions  1,405 (private included)
-  active_days    27 of 30 days
+  contributions  1,324 (private included)
+  active_days    26 of 30 days
   streak         12 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  264 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  26.6%
-  daytime  12-18  483 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  48.6%
-  evening  18-24  228 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  22.9%
-  night    00-06   19 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.9%
+  morning  06-12  243 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  25.7%
+  daytime  12-18  467 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  49.4%
+  evening  18-24  217 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  22.9%
+  night    00-06   19 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   2.0%
 
 pace — since 2019-05-24
   tracked_total  2364h 07m across 7.4 years
-  last_30_days   39h 26m (9h 12m per week)
+  last_30_days   31h 22m (7h 19m per week)
 ```
 
-_Updated 2026-10-10 11:27 UTC_
+_Updated 2026-10-11 11:40 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
+Programming Languages: 
 Other                    0 secs              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
 
-🔥 Editors: 
+Editors: 
 No Activity Tracked This Week
 
-💻 Operating System: 
+Operating System: 
 No Activity Tracked This Week
 ```
 
