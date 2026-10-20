@@ -95,59 +95,59 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions         31 sessions · 174 prompts · 1.36k chars per prompt
-  agent_time       14h 16m (97.14% of tracked time)
-  lines_generated  +5,005 / -0
-  context_moved    21.95M tokens in · 3.44M tokens out
-  leverage         351 lines per agent hour · 29 lines per prompt
-  context_cost     4,386 tokens in per generated line
-  top_surfaces     Markdown 8h 27m · PHP 1h 33m · Bash 1h 16m · Other 0h 56m
+  sessions         16 sessions · 101 prompts · 809 chars per prompt
+  agent_time       6h 38m (94.06% of tracked time)
+  lines_generated  +2,563 / -0
+  context_moved    9.34M tokens in · 1.26M tokens out
+  leverage         386 lines per agent hour · 25 lines per prompt
+  context_cost     3,644 tokens in per generated line
+  top_surfaces     Markdown 3h 58m · PowerShell 0h 53m · Other 0h 47m · Bash 0h 32m
 
 delivery — last 30 days
-  prs_opened     524
-  prs_merged     417 (80% of opened)
+  prs_opened     527
+  prs_merged     419 (80% of opened)
   pr_size        median 309 lines per merged PR
-  lines_shipped  +305,752 / -25,874
+  lines_shipped  +309,737 / -25,928
   active_repos   15
   reviews_given  6
-  contributions  1,511 (private included)
-  active_days    25 of 30 days
+  contributions  1,535 (private included)
+  active_days    24 of 30 days
   streak         12 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  296 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  27.4%
-  daytime  12-18  514 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  47.5%
-  evening  18-24  254 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  23.5%
-  night    00-06   17 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.6%
+  morning  06-12  296 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  26.9%
+  daytime  12-18  524 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  47.7%
+  evening  18-24  262 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  23.8%
+  night    00-06   17 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.5%
 
 pace — since 2019-05-24
   tracked_total  2364h 45m across 7.4 years
-  last_30_days   7h 37m (1h 46m per week)
+  last_30_days   6h 42m (1h 33m per week)
 ```
 
-_Updated 2026-10-19 11:22 UTC_
+_Updated 2026-10-20 10:30 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
-Markdown                 3 hrs 58 mins       ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   56.28 % 
-PowerShell               53 mins             ⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   12.68 % 
-Other                    47 mins             ⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   11.19 % 
-Bash                     32 mins             ⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   07.78 % 
-PHP                      18 mins             ⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   04.47 % 
+Programming Languages: 
+Markdown                 3 hrs 58 mins       🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   56.28 % 
+PowerShell               53 mins             🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   12.68 % 
+Other                    47 mins             🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   11.19 % 
+Bash                     32 mins             🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   07.78 % 
+PHP                      18 mins             🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   04.47 % 
 
-🔥 Editors: 
-Claude Code              6 hrs 23 mins       ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜   90.41 % 
-VS Code                  26 mins             ⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   06.14 % 
-Opencode Cli             14 mins             ⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜   03.46 % 
+Editors: 
+Claude Code              6 hrs 23 mins       🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛   90.41 % 
+VS Code                  26 mins             🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   06.14 % 
+Opencode Cli             14 mins             🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   03.46 % 
 
-💻 Operating System: 
-Linux                    7 hrs 4 mins        ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   100.00 % 
+Operating System: 
+Linux                    7 hrs 4 mins        🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦   100.00 % 
 ```
 
 
