@@ -95,51 +95,45 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  sessions         6 sessions · 21 prompts · 1.2k chars per prompt
-  agent_time       0h 41m (62.28% of tracked time)
-  lines_generated  +72 / -0
-  context_moved    1.5M tokens in · 91.66k tokens out
-  context_cost     20,866 tokens in per generated line
-  top_surfaces     Markdown 0h 32m · Other 0h 28m · Bash 0h 05m · PowerShell 0h 00m
+  no activity tracked
 
 delivery — last 30 days
-  prs_opened     545
-  prs_merged     458 (84% of opened)
-  pr_size        median 318 lines per merged PR
-  lines_shipped  +329,793 / -27,083
+  prs_opened     583
+  prs_merged     495 (85% of opened)
+  pr_size        median 317 lines per merged PR
+  lines_shipped  +347,197 / -44,037
   active_repos   15
   reviews_given  6
-  contributions  1,604 (private included)
+  contributions  1,772 (private included)
   active_days    26 of 30 days
   streak         12 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  331 commits  🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  27.5%
-  daytime  12-18  582 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  48.4%
-  evening  18-24  272 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  22.6%
-  night    00-06   18 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.5%
+  morning  06-12  356 commits  🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  27.3%
+  daytime  12-18  644 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  49.4%
+  evening  18-24  285 commits  🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  21.9%
+  night    00-06   18 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.4%
 
 pace — since 2019-05-24
   tracked_total  2364h 45m across 7.4 years
-  last_30_days   6h 32m (1h 31m per week)
 ```
 
-_Updated 2026-10-21 10:41 UTC_
+_Updated 2026-10-22 10:44 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-📊 **This Week I Spent My Time On** 
+**This Week I Spent My Time On** 
 
 ```text
-💬 Programming Languages: 
+Programming Languages: 
 No Activity Tracked This Week
 
-🔥 Editors: 
+Editors: 
 No Activity Tracked This Week
 
-💻 Operating System: 
+Operating System: 
 No Activity Tracked This Week
 ```
 
