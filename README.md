@@ -130,25 +130,21 @@ _Updated 2026-10-21 10:41 UTC_
 ## ↻ `where_the_time_goes`
 
 <!--START_SECTION:waka-->
-**This Week I Spent My Time On** 
+📊 **This Week I Spent My Time On** 
 
 ```text
-Programming Languages: 
-Markdown                 32 mins             🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   48.46 % 
-Other                    28 mins             🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   42.78 % 
-Bash                     5 mins              🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   08.23 % 
-PowerShell               0 secs              ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   00.52 % 
+💬 Programming Languages: 
+No Activity Tracked This Week
 
-Editors: 
-Claude Code              41 mins             🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛   62.11 % 
-VS Code                  25 mins             🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   37.89 % 
+🔥 Editors: 
+No Activity Tracked This Week
 
-Operating System: 
-Linux                    1 hr 6 mins         🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦   100.00 % 
+💻 Operating System: 
+No Activity Tracked This Week
 ```
 
 
- Last Updated on 21/10/2026 10:41:00 UTC
+ Last Updated on 22/10/2026 10:43:31 UTC
 <!--END_SECTION:waka-->
 
 ## ∎ `thesis`
