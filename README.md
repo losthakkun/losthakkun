@@ -6,9 +6,14 @@ Lead Software Engineer · Product Engineering
 WEPORT (Radiant Logistics) · Mexico City · Spanish / English
 
 
-  human    need ──▶ discovery ──▶ scope ──▶ contracts ──▶ review ──▶ measure
-                                                │            ▲
-  agents                                        └─ build ────┘
+  human          need ─▶ discovery ─▶ specs ────────▶ decisions ─────────────▶ merge ─▶ measure
+                                        │                 ▲                        ▲
+  orchestrator                        tasks ─▶ route ─▶ verdict / S# ─▶ review ─▶ commit
+                                                 │                ▲       │          ▲
+  agents                                      explore ─▶ build ─▶ verify  └ 4 lenses ┘
+                                                         red → green · fresh context · refuter
+
+  memory         ◀─────── decisions, verdicts and failures, recalled by the next session ───────▶
 ```
 
 Ten years shipping software. Most of my attention now goes to making agent output something
@@ -23,7 +28,7 @@ teams outside engineering pick up AI and automation.
 ```txt
 + Owning initiatives end to end: discovery, MVP scope, build, deploy, adoption
 + Choosing the stack per project against technical and commercial constraints
-+ Designing agentic workflows governed by TDD, OpenSpec and adversarial review
++ Designing agentic workflows governed by TDD, ODD and adversarial review
 + Building the harnessing layer that keeps agent context governed and reproducible
 + Tuning AI economics, measuring token cost against delivered capacity
 + Improving IT infrastructure alongside product: security, governance, centralization
@@ -37,7 +42,8 @@ teams outside engineering pick up AI and automation.
 2025 · now    WEPORT / Radiant Logistics    Lead Software Engineer · freight forwarding
 2023 · 2025   VOXPOP                        Software Development Manager · retail streaming
 2016 · 2022   VOXPOP                        Full-stack · AndroidTV, React Native, AWS
-2018 · now    Independent                   React / React Native consulting
+2018 · now    Independent                   Cross-platform development · agentic workflows
+                                            for operations and development teams
 
 Native modules, device fleets, streaming platforms, hardware, IT operations. Infrastructure
 is still part of the job. Most of what I know about how systems fail, I learned there.
@@ -63,7 +69,7 @@ Organization   IT infrastructure, security and governance, process centralizatio
                cross-area AI and automation adoption
 Orchestration  Claude Code, opencode, MCP servers, subagent routing, multi-agent
                adversarial review, in-house harnessing layer (devsource)
-Method         TDD, Red-Green-Refactor, OpenSpec, spec-driven development, contracts first
+Method         TDD, Red-Green-Refactor, ODD (Organic Driven Development), contracts first
 Intelligence   GitNexus cross-repo graph, CodeGraph per-repo index, Engram team memory
                on a self-hosted sync server
 Languages      TypeScript, JavaScript, Node.js, Python, PHP, Bash
