@@ -16,18 +16,26 @@ WEPORT (Radiant Logistics) · Mexico City · Spanish / English
   memory         ◀─────── decisions, verdicts and failures, recalled by the next session ───────▶
 ```
 
-Ten years shipping software. Most of my attention now goes to making agent output something
-you can trust: I own the contracts and the review, agents work inside them, and a change isn't
-done until there's a number showing it moved something.
+Ten years shipping software end to end: web, mobile, backend and cloud, from the first
+conversation about a need through to a number that shows the outcome moved. Product engineering
+by scope rather than by title: I decide what gets built and on which stack, then carry it
+through discovery, build, deploy and adoption.
 
-The work also goes past the codebase. IT infrastructure, security and governance, and helping
-teams outside engineering pick up AI and automation.
+Agentic development is what widened that scope, and it's where most of my attention goes now.
+I own the specs and the review, agents work inside them under test-first contracts, and a
+change isn't done until there's evidence it moved something. The practice goes past the
+codebase: IT infrastructure, security and governance, and helping teams outside engineering
+pick up AI and automation.
+
+The depth underneath comes from cross-platform work: React and React Native products on iOS,
+Android and AndroidTV hardware, with the native modules, backend and cloud behind them.
 
 ## ◆ `current_scope`
 
 ```txt
 + Owning initiatives end to end: discovery, MVP scope, build, deploy, adoption
 + Choosing the stack per project against technical and commercial constraints
++ Shipping cross-platform products on React and React Native, web to mobile to TV
 + Designing agentic workflows governed by TDD, ODD and adversarial review
 + Building the harnessing layer that keeps agent context governed and reproducible
 + Tuning AI economics, measuring token cost against delivered capacity
@@ -42,8 +50,8 @@ teams outside engineering pick up AI and automation.
 2025 · now    WEPORT / Radiant Logistics    Lead Software Engineer · freight forwarding
 2023 · 2025   VOXPOP                        Software Development Manager · retail streaming
 2016 · 2022   VOXPOP                        Full-stack · AndroidTV, React Native, AWS
-2018 · now    Independent                   Cross-platform development · agentic workflows
-                                            for operations and development teams
+2018 · now    Independent                   React / React Native cross-platform products ·
+                                            agentic workflows for operations and dev teams
 
 Native modules, device fleets, streaming platforms, hardware, IT operations. Infrastructure
 is still part of the job. Most of what I know about how systems fail, I learned there.
@@ -71,9 +79,10 @@ Orchestration  Claude Code, opencode, MCP servers, subagent routing, multi-agent
                adversarial review, in-house harnessing layer (devsource)
 Method         TDD, Red-Green-Refactor, ODD (Organic Driven Development), contracts first
 Intelligence   GitNexus cross-repo graph, CodeGraph per-repo index, Engram team memory
-               on a self-hosted sync server
+               shared across agents and sessions
 Languages      TypeScript, JavaScript, Node.js, Python, PHP, Bash
-Interfaces     React, Vite, Next.js, React Native, Tailwind
+Interfaces     React, Vite, Next.js, Tailwind, React Native with native modules (Android / iOS),
+               Native Bridge and Fabric
 Services       FastAPI, Flask, Pydantic, Express, Laravel
 Data           PostgreSQL, MySQL, DynamoDB, Athena, medallion data lakes
 Cloud          AWS Lambda / S3 / DynamoDB / Athena / IAM, Serverless, Docker, GitHub Actions
