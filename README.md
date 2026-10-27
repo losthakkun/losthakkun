@@ -110,31 +110,37 @@ it out.
 <!--START_SECTION:agent-impact-->
 ```txt
 agent_workflow — last 7 days
-  no activity tracked
+  sessions         35 sessions · 172 prompts · 1.55k chars per prompt
+  agent_time       14h 33m (100.0% of tracked time)
+  lines_generated  +3,547 / -42
+  context_moved    9.97M tokens in · 2.43M tokens out
+  leverage         244 lines per agent hour · 21 lines per prompt
+  context_cost     2,811 tokens in per generated line
+  top_surfaces     Markdown 6h 59m · Other 5h 25m · HTML 0h 53m · JavaScript 0h 39m
 
 delivery — last 30 days
-  prs_opened     557
-  prs_merged     472 (85% of opened)
-  pr_size        median 319 lines per merged PR
-  lines_shipped  +300,047 / -45,816
+  prs_opened     565
+  prs_merged     481 (85% of opened)
+  pr_size        median 323 lines per merged PR
+  lines_shipped  +304,324 / -45,918
   active_repos   16
   reviews_given  1
-  contributions  1,631 (private included)
+  contributions  1,647 (private included)
   active_days    25 of 30 days
   streak         12 consecutive days
 
 commit_rhythm — last 30 days · America/Mexico_City
-  morning  06-12  335 commits  🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  27.8%
-  daytime  12-18  591 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  49.1%
-  evening  18-24  259 commits  🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  21.5%
+  morning  06-12  342 commits  🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  28.3%
+  daytime  12-18  591 commits  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  49.0%
+  evening  18-24  256 commits  🟦🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛  21.2%
   night    00-06   18 commits  ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛   1.5%
 
 pace — since 2019-05-24
-  tracked_total  2364h 45m across 7.4 years
-  last_30_days   65h 04m (15h 11m per week)
+  tracked_total  2366h 45m across 7.4 years
+  last_30_days   63h 16m (14h 45m per week)
 ```
 
-_Updated 2026-10-26 11:38 UTC_
+_Updated 2026-10-27 11:08 UTC_
 <!--END_SECTION:agent-impact-->
 
 ## ↻ `where_the_time_goes`
